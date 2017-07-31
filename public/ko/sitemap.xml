@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/ko/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://wiley.dev.nurigo.net/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="http://wiley.dev.nurigo.net/ko/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/ko/categories/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://wiley.dev.nurigo.net/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="http://wiley.dev.nurigo.net/ko/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/ko/tags/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://wiley.dev.nurigo.net/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="http://wiley.dev.nurigo.net/ko/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/ko/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://wiley.dev.nurigo.net/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="http://wiley.dev.nurigo.net/ko/"
+                />
+  </url>
+  
+</urlset>

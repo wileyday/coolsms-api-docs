@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="http://wiley.dev.nurigo.net/ko/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://wiley.dev.nurigo.net/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/authentication/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/creategroup/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/apiversion/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/appid/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/appversion/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/ata/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/begin/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/buttonname/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/buttonurl/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/count/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/country.request/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/country/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/cta/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/customfields.response/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/customfields/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/datecreated/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/datereceived/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/dateupdated/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/devlanguage/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/disablesms/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/end/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/filesize/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/footer/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/forcesms/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/from.desc/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/from.request/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/from/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/groupid.request/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/groupid/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/groupinfo.response/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/groupoptions.request/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/groupoptions.response/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/height/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/imageid/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/imagetype/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/kakaooptions/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/limit/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/lms/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/messageid/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/messageinforesponse/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/messageoptionalparameters/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/messagerequiredparameters/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/mms/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/networkcode/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/networkname/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/offset/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/operatorname/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/osplatform/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/price/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/push/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/recipient.request/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/recipient/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/recipients/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/recipientswithcustomfields/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/scheduleddate/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/sdkversion/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/senderkey/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/siteuser/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/sms/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/statuscode/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/subject.request/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/subject/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/templatecode/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/testmode/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/text.request/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/text/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/to.request/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/to/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/totalcount/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/ttl/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/type.response/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/type/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/typesearch.request/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/typesearch.response/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/width/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/categories/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="http://wiley.dev.nurigo.net/ko/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://wiley.dev.nurigo.net/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="http://wiley.dev.nurigo.net/ko/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://wiley.dev.nurigo.net/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/fragments/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wiley.dev.nurigo.net/tags/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="http://wiley.dev.nurigo.net/ko/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://wiley.dev.nurigo.net/tags/"
+                />
+  </url>
+  
+</urlset>

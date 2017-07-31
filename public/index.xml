@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DocuAPI Example Site</title>
+    <link>http://wiley.dev.nurigo.net/</link>
+    <description>Recent content on DocuAPI Example Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    
+	<atom:link href="http://wiley.dev.nurigo.net/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>API Reference</title>
+      <link>http://wiley.dev.nurigo.net/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/</guid>
+      <description>Introduction Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+This example API documentation page was created with DocuAPI, a multilingual documentation theme for the static site generator Hugo.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/authentication/</guid>
+      <description>요청 인증 REST API를 요청(Request)할 때 HTTP 헤더에 Authorization 정보를 추가하여 인증 받을 수 있습니다. API를 요청한 계정의 소유자를 확인하는데 필수적인 절차입니다.
+ 참고 Authorization 헤더정보를 전달하는 방식은 HTTP에서 인증을 위한 수단으로 널리 사용되고 있습니다. Basic access authentication 을 참고하세요.   쿨에스엠에스 API Key 관리 페이지에서 API Key와 API Secret을 생성하여 REST API 호출에 사용합니다.
+Request Syntax Authorization: &amp;lt;AuthenticationMethod&amp;gt; apiKey=&amp;lt;ApiKey&amp;gt;, date=&amp;lt;DateTime&amp;gt;, salt=&amp;lt;Salt&amp;gt;, signature=&amp;lt;Signature&amp;gt;  &amp;lt;AuthenticationMethod&amp;gt; Signature 생성 알고리즘으로 HMAC-SHA256, HMAC-MD5 중에 하나를 선택할 수 있습니다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/creategroup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/creategroup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/apiversion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/apiversion/</guid>
+      <description>API 버전</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/appid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/appid/</guid>
+      <description>어플리케이션을 구분하는 ID 로 사용되며 솔루션 제공에 대한 수수료 정산의 기준이 되는 ID 이기도 합니다. 자세한 안내는 http://www.coolsms.co.kr/sp 을 참고하세요.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/appversion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/appversion/</guid>
+      <description>어플리케이션 버전, 예) Purplebook 4.1</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/ata/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/ata/</guid>
+      <description>한/영 포함 1,000 자의 텍스트를 발송할 수 있는 카카오톡의 알림톡</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/begin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/begin/</guid>
+      <description>조회 시작 일시를 입력합니다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/buttonname/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/buttonname/</guid>
+      <description>카카오톡 버튼 이름, 10 자 제한</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/buttonurl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/buttonurl/</guid>
+      <description>카카오톡 버튼 URL, 100 자 제한</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/count/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/count/</guid>
+      <description>발송하려는 메시지의 타입별 갯수</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/country.request/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/country.request/</guid>
+      <description>발송하려는 국가의 국가번호를 입력합니다.
+입력 가능한 값
+ 82 default 한국 81 일본 86 중국 886 대만 1 미국 기타 해당 국가의 국제전화 국가코드
+참고 국제전화 국가코드는 ITU-T 의 E.164 에서 지정한 Country Calling Codes 을 참고하세요.     국가번호가 82(한국) 일 때에만 LMS, MMS 발송 가능합니다. 이외 국가에서는 SMS 만 발송 가능합니다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/country/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/country/</guid>
+      <description>국가번호</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/cta/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/cta/</guid>
+      <description>한/영 포함 1,000 자의 텍스트를 보낼 수 있는 카카오톡의 친구톡</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/customfields.response/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/customfields.response/</guid>
+      <description>요청 때 입력한 값이 그대로 리턴되며 메시지로그에서도 확인할 수 있습니다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/customfields/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/customfields/</guid>
+      <description>사용자정의 필드를 개수 제한없이 총 160 자까지 입력할 수 있습니다. 요청에 대한 응답에 그대로 리턴되며 발송 이후 메시지로그에서도 조회 가능합니다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/datecreated/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/datecreated/</guid>
+      <description>생성된 시각</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/datereceived/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/datereceived/</guid>
+      <description>단말기로 수신된 날짜와 시각</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/dateupdated/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/dateupdated/</guid>
+      <description>업데이트 시각</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/devlanguage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/devlanguage/</guid>
+      <description>개발 프로그래밍 언어, 예) PHP 5.3.3</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/disablesms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/disablesms/</guid>
+      <description>알림톡 및 친구톡 발송에 실패하여도 문자메시지로 대체하여 발송하지 않습니다.
+입력 가능한 값
+ true 알림톡 실패시 문자로 대체하지 않음 false default 알림톡 실패시 문자로 대체 발송   </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/end/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/end/</guid>
+      <description>조회 끝 일시를 입력합니다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/filesize/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/filesize/</guid>
+      <description>바이트 단위의 파일 크기</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/footer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/footer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/forcesms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/forcesms/</guid>
+      <description>누리고푸시를 사용하더라도 푸시로 발송하지 않고 문자메시지로 발송합니다.
+입력 가능한 값
+ true 강제 문자 발송 false default 푸시 발송 실패시 문자 발송   </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/from.desc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/from.desc/</guid>
+      <description>발신번호 System Message: WARNING/2 (&amp;lt;stdin&amp;gt;, line 2)
+Title underline too short.
+발신번호 =======   2015년 10월 16일부터 시행된 발신번호 사전등록제 공지사항 에 의해 반드시 등록된 번호만 허용됩니다.
+발신번호는 (-) 등 기호를 제외한 번호만 입력합니다.
+예) 0212345678
+Caution!
+해외 문자 발송시 발신번호는 해당 국가에 할당된 번호로 발송될 수 있습니다.
+ </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/from.request/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/from.request/</guid>
+      <description>발신번호를 입력합니다. 2015/10/16 발신번호 사전등록제에 의해 반드시 등록된 번호만 허용됩니다(해외문자 제외). 발신번호는 (-) 등 기호를 제외한 번호만 입력합니다. 예) 0212345678
+참고 쿨에스엠에스 발신번호 사전등록제 공지사항 참고  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/from/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/from/</guid>
+      <description>보내는 사람의 전화번호인 발신번호 로 보통 고객센터의 전화번호를 사용하며 사전에&amp;nbsp;등록되어 있어야 합니다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/groupid.request/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/groupid.request/</guid>
+      <description>생성된 해당 그룹에 메시지 추가, 삭제, 발송 등 그룹메시지를 다루는 Handle Key로 사용됩니다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/groupid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/groupid/</guid>
+      <description>메시지가 속한 그룹의 고유 ID</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/groupinfo.response/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/groupinfo.response/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/groupoptions.request/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/groupoptions.request/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/groupoptions.response/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/groupoptions.response/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/height/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/height/</guid>
+      <description>이미지의 픽셀 단위 세로 크기</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/imageid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/imageid/</guid>
+      <description>:doc:`../ImageUpload/index` 으로 등록할 때 리턴되는 이미지 ID
+System Message: ERROR/3 (&amp;lt;stdin&amp;gt;, line 1); backlink
+Unknown interpreted text role &amp;quot;doc&amp;quot;. </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/imagetype/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/imagetype/</guid>
+      <description>이미지의 형식, 업로드 할 때 서버에서 자동으로 jpeg 형식으로 변환됩니다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/kakaooptions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/kakaooptions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/limit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/limit/</guid>
+      <description>가져올 레코드의 수
+입력 가능한 값
+ 1 ~ 1000 기본값은 20 입니다   </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/lms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/lms/</guid>
+      <description>영자 2,000 자(한글 1,000 자) 이하의 장문메시지</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/messageid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/messageid/</guid>
+      <description>메시지의 고유 ID</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/messageinforesponse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/messageinforesponse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/messageoptionalparameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/messageoptionalparameters/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/messagerequiredparameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/messagerequiredparameters/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/mms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/mms/</guid>
+      <description>영자 2,000 자(한글 1,000 자) 이하의 텍스트와 1개의 이미지 를 포함하는 메시지</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/networkcode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/networkcode/</guid>
+      <description>메시지가 발송된 최종 종착지의 네트워크 혹은 이동통신사의 코드
+참고 이동통신사 코드  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/networkname/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/networkname/</guid>
+      <description>이동통신사 이름</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/offset/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/offset/</guid>
+      <description>가져올 레코드 시작 위치
+입력 가능한 값
+ 0 ~ 999999 기본값은 0 입니다   </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/operatorname/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/operatorname/</guid>
+      <description>이동통신사 이름</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/osplatform/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/osplatform/</guid>
+      <description>클라이언트의 OS 및 플랫폼 버전, 예) CentOS 6.6</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/price/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/price/</guid>
+      <description>unitPrice 발송하려는 메시지의 타입별 단가 calculatedPrice 발송하려는 메시지의 타입별 비용  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/push/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/push/</guid>
+      <description>푸시메시지</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/recipient.request/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/recipient.request/</guid>
+      <description>하나의 수신번호를 입력합니다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/recipient/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/recipient/</guid>
+      <description>수신번호</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/recipients/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/recipients/</guid>
+      <description>배열 형식의 수신번호 목록을 입력합니다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/recipientswithcustomfields/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/recipientswithcustomfields/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/scheduleddate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/scheduleddate/</guid>
+      <description>YYYY-MM-DD HH:MI:SS 포맷의 예약시간.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/sdkversion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/sdkversion/</guid>
+      <description>SDK 버전, 예) PHP SDK 1.5</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/senderkey/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/senderkey/</guid>
+      <description>알림톡 Sender Key</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/siteuser/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/siteuser/</guid>
+      <description>API를 호출하는 사이트에서 관리하는 유저 아이디 입력. 미입력시 &amp;quot;__private__&amp;quot; 으로 입력됩니다. 해당 아이디 앞으로 등록된 발신번호를 확인합니다. 발신번호 등록 API를 참고하세요. http://www.coolsms.co.kr/SenderID_API  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/sms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/sms/</guid>
+      <description>영자 90 자(한글 45 자) 이하의 단문메시지</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/statuscode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/statuscode/</guid>
+      <description>메시지의 상태를 나타내는 4자리의 숫자로 구성된 코드입니다.&amp;nbsp;:doc:`../codes` 에서 코드 목록을 확인하실 수 있습니다.
+System Message: ERROR/3 (&amp;lt;stdin&amp;gt;, line 1); backlink
+Unknown interpreted text role &amp;quot;doc&amp;quot;. </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/subject.request/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/subject.request/</guid>
+      <description>type이 LMS, MMS 일때 표시될 제목을 입력합니다. 영자 40 자 혹은 한글 20 자 까지 입력 가능합니다. 카카오톡 실패시 대체문자가 LMS일 경우에도 제목으로 사용됩니다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/subject/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/subject/</guid>
+      <description>type이 LMS, MMS 일 때 제목</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/templatecode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/templatecode/</guid>
+      <description>알림톡 Template Code</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/testmode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/testmode/</guid>
+      <description>값이 true 이면 CARRIER 시뮬레이터로 시뮬레이션됩니다. 수신번호를 반드시 01000000000 ~ 01000009999 범위 내에서 테스트합니다. 결과값은 60으로 고정됩니다.
+입력 가능한 값
+ false default 메시지를 실제 발송합니다. true 테스트 모드로 실제 발송하지 않고 내부 시뮬레이션을 타게 합니다.   </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/text.request/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/text.request/</guid>
+      <description>메시지 내용을 입력합니다. 메시지 내용은 유니코드 UTF-8 형식의 텍스트만 유효합니다. 문자메시지(SMS, LMS, MMS)의 경우 국내 이동통신사의 규격에 따라 완성형한글 로 변환되므로 변환과정에서 깨지는 문자가 발생할 수 있으므로 유의하세요. 예) 똠방각하 -&amp;gt; ?방각하</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/text/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/text/</guid>
+      <description>메시지 내용</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/to.request/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/to.request/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/to/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/to/</guid>
+      <description>메시지를 받는 사람의 전화번호인 수신번호</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/totalcount/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/totalcount/</guid>
+      <description>레코드 전체 갯수</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/ttl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/ttl/</guid>
+      <description>초단위의 남은 TimeToLive 시간</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/type.response/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/type.response/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/type/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/type/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/typesearch.request/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/typesearch.request/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/typesearch.response/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/typesearch.response/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://wiley.dev.nurigo.net/fragments/width/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiley.dev.nurigo.net/fragments/width/</guid>
+      <description>이미지의 픽셀 단위 가로 크기</description>
+    </item>
+    
+  </channel>
+</rss>
