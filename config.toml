@@ -44,10 +44,10 @@ toc_footers = [
 "Documentation Powered by [DocuAPI](https://github.com/bep/docuapi)",
 "Hugo Theme by [bep](https://github.com/bep)"
 ]
+
 [languages.en.blackfriday]
 angledQuotes = false
 hrefTargetBlank = true
-
 
 [languages.ko]
 languageName = "한국어"
