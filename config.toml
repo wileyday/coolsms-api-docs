@@ -1,6 +1,7 @@
 baseURL = "http://coolsms.github.io/"
 languageCode = "ko"
 title = "쿨에스엠에스 API References"
+theme = "docuapi"
 
 # Code higlighting settings
 pygmentsCodefences = true
