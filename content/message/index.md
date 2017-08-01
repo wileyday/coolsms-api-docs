@@ -41,7 +41,7 @@ Types
 {Map}  
 Key: Value 형식의 데이터를 담을 수 있습니다.
 
-``` sourceCode
+```
 {
   "key1": "value1",
   ...
@@ -51,7 +51,7 @@ Key: Value 형식의 데이터를 담을 수 있습니다.
 \[Array\]  
  배열 형식으로 같은 형식의 데이터를 담는 역할을 합니다.
 
-> ``` sourceCode
+> ```
 > [
 >   "value1",
 >   "value2",
@@ -62,28 +62,28 @@ Key: Value 형식의 데이터를 담을 수 있습니다.
 “String”  
  문자열의 파라메터를 표현합니다.
 
-> ``` sourceCode
+> ```
 > "value"
 > ```
 
 “Date”  
  날짜형식의 문자열을 표현합니다.
 
-> ``` sourceCode
+> ```
 > "2017-06-06 16:49:02"
 > ```
 
 Number  
  숫자를 나타냅니다.
 
-> ``` sourceCode
+> ```
 > 369
 > ```
 
 “Boolean”  
 참, 거짓값을 문자열로 표현합니다.
 
-``` sourceCode
+```
 "true"
 "false"
 ```

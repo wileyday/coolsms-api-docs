@@ -43,7 +43,7 @@ apiSecret | - | secret key 가 리턴됩니다.
 ```
 
 
-```shell
+```bash
 curl "https://solapi.com/credentials/create"
   -H "Authorization: USER user_id=example, date=2017-08-01 11:01:07, salt=salt=597fe0e36daeb, signature=fd96c1931e947aef14c963b67763c913"
 ```

@@ -18,7 +18,7 @@ search = true
   
 # Configure the language example tabs.
 [[params.language_tabs]]
-key = "shell"
+key = "bash"
 name = "CURL" 
 [[params.language_tabs]]
 key = "javascript"
