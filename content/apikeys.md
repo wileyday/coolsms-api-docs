@@ -55,3 +55,16 @@ request(
   }
 )
 ```
+
+```python
+import urllib.request
+
+url = 'http://www.someserver.com/cgi-bin/register.cgi'
+values = {}
+headers = { 'Authorization': 'USER user_id=example, date=2017-08-01 11:01:07, salt=salt=597fe0e36daeb, signature=fd96c1931e947aef14c963b67763c913' }
+
+data = urllib.parse.urlencode(values)
+req = urllib.request.Request(url, data, headers)
+response = urllib.request.urlopen(req)
+the_page = response.read()
+```
