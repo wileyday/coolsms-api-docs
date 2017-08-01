@@ -17,6 +17,6 @@ deploy:
   provider: pages
   skip_cleanup: true
   local_dir: public
-  github_token: 9c13a635919e0d0ccfc032a4ca8f45a7df053c92
+  github_token: 1a66288ab4828d76a89a93b6736bbe5b6b03a6d1
   on:
     branch: master
