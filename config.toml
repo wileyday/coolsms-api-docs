@@ -1,4 +1,4 @@
-baseURL = "http://coolsms.github.io/"
+baseURL = "https://master--pest-exterminator-toad-48333.netlify.com/"
 languageCode = "ko"
 title = "쿨에스엠에스 API References"
 theme = "docuapi"
