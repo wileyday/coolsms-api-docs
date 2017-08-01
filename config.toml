@@ -1,4 +1,4 @@
-baseURL = "http://wiley.dev.nurigo.net/"
+baseURL = "http://coolsms.github.io/"
 languageCode = "ko"
 title = "쿨에스엠에스 API References"
 
@@ -10,24 +10,24 @@ pygmentsStyle = "monokai"
 # The monokai stylesheet is included in the base template.
 pygmentsUseClasses = true
 
-defaultContentLanguage = "en"
+defaultContentLanguage = "ko"
 
 [params]
 search = true
   
 # Configure the language example tabs.
 [[params.language_tabs]]
-key = "go"
-name = "Go" 
-[[params.language_tabs]]
 key = "shell"
-name = "Shell" 
+name = "CURL" 
+[[params.language_tabs]]
+key = "javascript"
+name = "Javascript"
 [[params.language_tabs]]
 key = "python"
 name = "Python"
 [[params.language_tabs]]
-key = "javascript"
-name = "Javascript"
+key = "php"
+name = "PHP"
 
 #Languages 
 [languages]

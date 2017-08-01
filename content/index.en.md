@@ -1,19 +1,19 @@
 ---
 weight: 10
-title: API
+title: API Reference
 ---
 
-# 쿨에스엠에스 API
+# Introduction
 
-Velkomen skal du vere til Kittn API! Du kan bruke vårt API til å kalle våre Kittn endepunkt. Her kan du hente ut ymse informasjon om kattar, kattungar og ulike rasar frå vår database.
+Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
 
-Her finn du kodedøme i Shell, Ruby, Python og Go! Du ser desse døma i det mørke feltet til høgre på skjermen -- og du kan byta programmeringsspråk ved å klikke på menyen oppe til høgre.
+We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
-**Denne API-dokumentasjonen vart laga med  [DocuAPI](https://github.com/bep/docuapi/),  eit tema for den statiske nettstadsmakaren [Hugo](http://gohugo.io/).** 
+**This example API documentation page was created with [DocuAPI](https://github.com/bep/docuapi/), a multilingual documentation theme for the static site generator [Hugo](http://gohugo.io/).** 
 
-# Autentisering
+# Authentication
 
-> For å autentisere ein brukar, bruk denne koden:
+> To authorize, use this code:
 
 ```go
 package main
@@ -52,20 +52,21 @@ const kittn = require('kittn');
 let api = kittn.authorize('meowmeowmeow');
 ```
 
-> Gjer vel og erstatt `meowmeowmeow` med din eigen API-nøkkel.
+> Make sure to replace `meowmeowmeow` with your API key.
 
-Kittn tek i bruk API-nøklar for å gi tilgang til APIet. Du kan kan registrere deg for å få ein slik nøkkel på vår  [utviklarportal](http://example.com/developers).
+Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
 
-Kittn forventar at API-nøkkelen er med i alle API-førespurnader til serveren i ein header som ser slik ut:
+Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: meowmeowmeow`
 
 <aside class="notice">
-Merk:  Du må erstatte <code>meowmeowmeow</code> med din personlege nøkkel.</aside>
+You must replace <code>meowmeowmeow</code> with your personal API key.
+</aside>
 
-# Kattungar
+# Kittens
 
-## Hent alle kattungane
+## Get All Kittens
 
 ```go
 package main
@@ -105,7 +106,7 @@ let api = kittn.authorize('meowmeowmeow');
 let kittens = api.kittens.get();
 ```
 
-> Programmet over gir ein JSON-struktur som ser slik ut:
+> The above command returns JSON structured like this:
 
 ```json
 [
@@ -126,24 +127,24 @@ let kittens = api.kittens.get();
 ]
 ```
 
-Dette endepunktet leverer alle kattungar.
+This endpoint retrieves all kittens.
 
-### HTTP-førespurnad
+### HTTP Request
 
 `GET http://example.com/api/kittens`
 
-### Query-parametrar
+### Query Parameters
 
-Parameter | Standardverdi | Skildring
+Parameter | Default | Description
 --------- | ------- | -----------
-include_cats | false | Set til true for å få alle kattar.
-available | true | Set til false for å ta med kattar som allereie er blitt adoptert vekk.
+include_cats | false | If set to true, the result will also include cats.
+available | true | If set to false, the result will include kittens that have already been adopted.
 
 <aside class="success">
-Hugs — ein lukkeleg kattunge er ein autentisert kattunge!
+Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Hent éin kattunge
+## Get a Specific Kitten
 
 ```go
 package main
@@ -183,7 +184,7 @@ let api = kittn.authorize('meowmeowmeow');
 let max = api.kittens.get(2);
 ```
 
-> Programmet over gir ein JSON-struktur som ser slik ut:
+> The above command returns JSON structured like this:
 
 ```json
 {
@@ -195,18 +196,18 @@ let max = api.kittens.get(2);
 }
 ```
 
-Dette endepunktet hentar ut éin spesifikk kattunge.
+This endpoint retrieves a specific kitten.
 
-<aside class="warning">Inne i HTML-blokker som denne så kan du ikkje bruke Markdown.  Bruk <code>&lt;code&gt;</code> for å markere kjeldekode.</aside>
+<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
-### HTTP-førespurnad
+### HTTP Request
 
 `GET http://example.com/kittens/<ID>`
 
-### URL-parametrar
+### URL Parameters
 
-Parameter | Skildring
+Parameter | Description
 --------- | -----------
-ID | IDen til kattungen du ynskjer å hente
+ID | The ID of the kitten to retrieve
 
 

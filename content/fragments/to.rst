@@ -1,1 +1,0 @@
-메시지를 받는 사람의 전화번호인 `수신번호 <../terms/recipientNumber.html>`_
