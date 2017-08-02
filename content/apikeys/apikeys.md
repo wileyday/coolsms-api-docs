@@ -288,7 +288,7 @@ the_page = response.read()
       "credentialStatus": "String",
       "dateCreated": "Date",
     },
-	...
+    ...
   }
 }
 ```
