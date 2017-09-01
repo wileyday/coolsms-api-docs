@@ -1,4 +1,4 @@
-baseurl = "http://example.org"
+baseurl = "/"
 title = "COOLSMS API References"
 theme = "dimension"
 languageCode = "ko"
