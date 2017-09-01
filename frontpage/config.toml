@@ -1,0 +1,50 @@
+baseurl = "http://example.org"
+title = "COOLSMS API References"
+theme = "dimension"
+languageCode = "ko"
+defaultContentLanguage = "ko"
+enableRobotsTXT = true
+disableRSS = true
+hasCJKLanguage = true
+
+[params]
+  title = "COOLSMS API References"
+  description = '<!--[-->쿨에스엠에스의 모든 API Reference 를 모았습니다.<!--]--><br />
+                <!--[-->for free under the <a href="https://html5up.net/license">Creative Commons</a> license.<!--]-->'
+  logo = "fa-diamond"
+  copyright = "Untitled"
+
+[[params.social]]
+  medium = "twitter"
+  icon = "twitter"
+  link = "#"
+
+[[params.social]]
+  medium = "facebook"
+  icon = "facebook"
+  link = "#"
+
+[[params.social]]
+  medium = "instagram"
+  icon = "instagram"
+  link = "#"
+
+[[params.social]]
+  medium = "github"
+  icon = "github"
+  link = "#"
+
+[languages]
+[languages.en]
+languageName = "English"
+weight = 1
+title = "COOLSMS API References"
+description = '<!--[-->A fully responsive site template designed by <a href="https://html5up.net">HTML5 UP</a> and released<!--]--><br />
+                <!--[-->for free under the <a href="https://html5up.net/license">Creative Commons</a> license.<!--]-->'
+
+[languages.ko]
+languageName = "한국어"
+weight = 2
+title = "COOLSMS API References"
+description = '<!--[-->쿨에스엠에스의 모든 API Reference 를 모았습니다.<!--]--><br />
+                <!--[-->for free under the <a href="https://html5up.net/license">Creative Commons</a> license.<!--]-->'
