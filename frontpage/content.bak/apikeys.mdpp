@@ -1,0 +1,15 @@
+---
+weight: 40
+title: API Credentials
+---
+
+# API Key 관리
+
+REST API 호출을 통해 API Key 생성, 삭제, Secret Key 재생성 등 관리 할 수 있습니다.
+
+!INCLUDE "apikeys/createCredential.txt"
+!INCLUDE "apikeys/getCredentialInfo.txt"
+!INCLUDE "apikeys/regenerateSecretKey.txt"
+!INCLUDE "apikeys/getCredentialList.txt"
+!INCLUDE "apikeys/updateCredentialStatus.txt"
+!INCLUDE "apikeys/deleteCredentials.txt"

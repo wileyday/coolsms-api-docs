@@ -1,0 +1,173 @@
+### 그룹 생성
+
+메시지를 담을 그룹을 생성하여 그룹아이디를 리턴합니다. 생성된 그룹은 24시간 후에 자동 삭제됩니다.
+
+#### Resource URL
+
+`https://solapi.com/GroupMessage/3/createGroup`
+
+
+#### Request Syntax
+
+##### Required Parameters
+
+필수 입력 사항이 없습니다.
+
+
+##### Optional Parameters
+
+**groupOptions** 그룹 옵션
+
+!INCLUDE "groupOptions.request.txt"
+
+Parameter | Default | Description
+----------|---------|------------
+appId
+
+
+> Request Syntax
+
+```json
+  {
+    "groupOptions": {
+      "appId": "String",
+      "appVersion": "String",
+      "testMode": "String",
+      "forceSms": "String",
+      "osPlatform": "String",
+      "devLanguage": "String",
+      "sdkVersion": "String",
+      "scheduledDate": "Date"
+    }
+  }
+```
+
+#### Response Syntax
+
+.. code-block:: javascript
+
+  {
+    "groupId": "String",
+    "groupOptions": {
+      "appId": "String",
+      "appVersion": "String",
+      "testMode": "String",
+      "forceSms": "String",
+      "osPlatform": "String",
+      "devLanguage": "String",
+      "sdkVersion": "String",
+      "apiVersion": "String"
+    },
+    "count": {
+      "sms": Number,
+      "lms": Number,
+      "mms": Number,
+      "ata": Number,
+      "cta": Number,
+      "push": Number,
+      "total": Number
+    },
+    "price": {
+      "unitPrice": {
+        "sms": Number,
+        "lms": Number,
+        "mms": Number,
+        "ata": Number,
+        "cta": Number,
+        "push": Number
+      },
+      "calculatedPrice": {
+        "sms": Number,
+        "lms": Number,
+        "mms": Number,
+        "ata": Number,
+        "cta": Number,
+        "push": Number,
+        "total": Number
+      }
+    },
+    "ttl": Number
+  }
+
+.. include:: ../fragments/groupInfo.response.rst
+
+
+#### Errors
+
+공통적으로 일어날 수 있는 오류 코드를 확인하시려면 :doc:`../errors` 를 참고하세요.
+
+
+#### Sample Request
+
+.. code-block:: http
+
+  POST /GroupMessage/3/createGroup HTTP/1.1
+  Content-Length: 330
+  Content-Type: application/json
+  Authorization: HMAC-MD5 apiKey=NCSMC84SPIYSCZTH, date=2017-04-24T02:51:50Z, salt=myakpnj1vj0znv, signature=42059bffe55154aa51cc3eda8b8763b5
+
+  {
+    "groupOptions": {
+      "appId": "K0123456789",
+      "testMode": "false",
+      "forceSms": "false",
+      "osPlatform": "Centos 9",
+      "devLanguage": "Python 3.4",
+      "sdkVersion": "SDKv3ForPaython",
+      "appVersion": "SampleApp v1.0"
+    }
+  }
+
+
+#### Sample Response
+
+.. code-block:: http
+
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+  Content-Length: 675
+
+  {
+    "groupId": "GID587C220F0734A",
+    "groupOptions": {
+      "appId": "K0123456789",
+      "testMode": "false",
+      "forceSms": "false",
+      "osPlatform": "Centos 9",
+      "devLanguage": "Python 3.4",
+      "sdkVersion": "SDKv3ForPaython",
+      "appVersion": "SampleApp v1.0"
+    },
+    "count": {
+      "sms": 1,
+      "lms": 1,
+      "mms": 0,
+      "ata": 0,
+      "cta": 0,
+      "push": 0,
+      "total": 2
+    },
+    "price": {
+      "unitPrice": {
+        "sms": 20,
+        "lms": 50,
+        "mms": 200,
+        "ata": 15,
+        "cta": 25,
+        "push": 5
+      },
+      "calculatedPrice": {
+        "sms": 20,
+        "lms": 50,
+        "mms": 0,
+        "ata": 0,
+        "cta": 0,
+        "push": 0,
+        "total": 70
+      }
+    },
+    "ttl": 3600
+  }
+
+.. include:: ../fragments/footer.rst
+

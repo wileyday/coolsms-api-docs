@@ -1,0 +1,24 @@
+{
+  "name": "coolsms-api-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "./hugo --theme docuapi",
+    "watch": "cd content; markdown-pp -w . &",
+    "touch": "cd content; touch *.mdpp",
+    "serve": "npm watch; sh server.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wileyday/coolsms-api-docs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wileyday/coolsms-api-docs/issues"
+  },
+  "homepage": "https://github.com/wileyday/coolsms-api-docs#readme"
+}
