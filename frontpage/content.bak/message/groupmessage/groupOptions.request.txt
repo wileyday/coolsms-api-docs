@@ -1,2 +1,0 @@
-- **appId**:
-!INCLUDE "appId.txt"

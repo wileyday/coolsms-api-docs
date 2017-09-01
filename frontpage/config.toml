@@ -1,4 +1,5 @@
-baseurl = "/"
+baseUrl = "/"
+publishDir = "../public"
 title = "COOLSMS API References"
 theme = "dimension"
 languageCode = "ko"
