@@ -12,8 +12,9 @@ hasCJKLanguage = true
   title = "COOLSMS API References"
   description = '<!--[-->쿨에스엠에스의 모든 API Reference 를 모았습니다.<!--]--><br />
                 <!--[-->서비스 사이트는 <a href="https://www.coolsms.co.kr/">여기</a>를 눌러 이동하세요.<!--]-->'
-  logo = "fa-diamond"
-  copyright = "Untitled"
+  #logo = "fa-diamond"
+  logoimage = "images/nurigo86x86.png"
+  copyright = "NURIGO Inc."
 
 [[params.social]]
   medium = "twitter"
