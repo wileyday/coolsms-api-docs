@@ -11,7 +11,7 @@ hasCJKLanguage = true
 [params]
   title = "COOLSMS API References"
   description = '<!--[-->쿨에스엠에스의 모든 API Reference 를 모았습니다.<!--]--><br />
-                <!--[-->for free under the <a href="https://html5up.net/license">Creative Commons</a> license.<!--]-->'
+                <!--[-->서비스 사이트는 <a href="https://www.coolsms.co.kr/">여기</a>를 눌러 이동하세요.<!--]-->'
   logo = "fa-diamond"
   copyright = "Untitled"
 
@@ -23,7 +23,7 @@ hasCJKLanguage = true
 [[params.social]]
   medium = "facebook"
   icon = "facebook"
-  link = "#"
+  link = "facebook.com/nurigoinc"
 
 [[params.social]]
   medium = "instagram"
@@ -40,12 +40,12 @@ hasCJKLanguage = true
 languageName = "English"
 weight = 1
 title = "COOLSMS API References"
-description = '<!--[-->A fully responsive site template designed by <a href="https://html5up.net">HTML5 UP</a> and released<!--]--><br />
-                <!--[-->for free under the <a href="https://html5up.net/license">Creative Commons</a> license.<!--]-->'
+description = '<!--[-->Documents for integration of text messages.<!--]--><br />
+                <!--[-->서비스 사이트는 <a href="https://www.coolsms.co.kr/">여기</a>를 눌러 이동하세요.<!--]-->'
 
 [languages.ko]
 languageName = "한국어"
 weight = 2
 title = "COOLSMS API References"
 description = '<!--[-->쿨에스엠에스의 모든 API Reference 를 모았습니다.<!--]--><br />
-                <!--[-->for free under the <a href="https://html5up.net/license">Creative Commons</a> license.<!--]-->'
+                <!--[-->서비스 사이트는 <a href="https://www.coolsms.co.kr/">여기</a>를 눌러 이동하세요.<!--]-->'
