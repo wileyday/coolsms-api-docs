@@ -1,52 +1,33 @@
-baseUrl = "/"
-publishDir = "../public"
-title = "COOLSMS API References"
-theme = "dimension"
+baseURL = "/"
 languageCode = "ko"
-defaultContentLanguage = "ko"
-enableRobotsTXT = true
-disableRSS = true
-hasCJKLanguage = true
+DefaultContentLanguage = "ko"
+
+title = "Docdock"
+theme = "hugo-theme-docdock"
+#themesdir = "../.."
 
 [params]
-  title = "COOLSMS API References"
-  description = '<!--[-->쿨에스엠에스의 모든 API Reference 를 모았습니다.<!--]--><br />
-                <!--[-->서비스 사이트는 <a href="https://www.coolsms.co.kr/">여기</a>를 눌러 이동하세요.<!--]-->'
-  #logo = "fa-diamond"
-  logoimage = "images/nurigo86x86.png"
-  copyright = "NURIGO Inc."
+editURL = "https://github.com/coolsms/coolsms-api-docs/edit/master/"
+noHomeIcon = false # default is false
+noSearch = false # default is false
+showVisitedLinks = true # default is false
+# themeStyle = "theme" # overide base css
+themeVariant = "blue" # choose theme variant "green", "gold" , "gray", "blue" (default)
+ordersectionsby = "weight" # ordersectionsby = "title"
 
-[[params.social]]
-  medium = "twitter"
-  icon = "twitter"
-  link = "#"
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
 
-[[params.social]]
-  medium = "facebook"
-  icon = "facebook"
-  link = "facebook.com/nurigoinc"
 
-[[params.social]]
-  medium = "instagram"
-  icon = "instagram"
-  link = "#"
+[[menu.shortcuts]]
+pre = "<hr>"
+name = "<i class='fa fa-github'></i> Github repo"
+identifier = "github"
+url = "https://github.com/coolsms"
+weight = 10
 
-[[params.social]]
-  medium = "github"
-  icon = "github"
-  link = "#"
-
-[languages]
-[languages.en]
-languageName = "English"
-weight = 1
-title = "COOLSMS API References"
-description = '<!--[-->Documents for integration of text messages.<!--]--><br />
-                <!--[-->서비스 사이트는 <a href="https://www.coolsms.co.kr/">여기</a>를 눌러 이동하세요.<!--]-->'
-
-[languages.ko]
-languageName = "한국어"
-weight = 2
-title = "COOLSMS API References"
-description = '<!--[-->쿨에스엠에스의 모든 API Reference 를 모았습니다.<!--]--><br />
-                <!--[-->서비스 사이트는 <a href="https://www.coolsms.co.kr/">여기</a>를 눌러 이동하세요.<!--]-->'
+[[menu.shortcuts]]
+name = "<i class='fa fa-bookmark'></i> API Reference"
+identifier = "rest-api"
+url = "https://docs.coolsms.co.kr/rest-api/"
+weight = 20
