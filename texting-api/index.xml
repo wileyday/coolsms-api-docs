@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>쿨에스엠에스 API References</title>
+    <link>/texting-api/</link>
+    <description>Recent content on 쿨에스엠에스 API References</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    
+	<atom:link href="/texting-api/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction</title>
+      <link>/texting-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/texting-api/</guid>
+      <description>소개 쿨에스엠에스의 REST API 레퍼런스입니다.</description>
+    </item>
+    
+    <item>
+      <title>요청 인증</title>
+      <link>/texting-api/authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/texting-api/authentication/</guid>
+      <description>요청 인증 REST API를 요청(Request)할 때 HTTP 헤더에 Authorization 정보를 추가하여 인증 받을 수 있습니다. API를 요청한 계정의 소유자를 확인하는데 필수적인 절차입</description>
+    </item>
+    
+    <item>
+      <title>Texting API</title>
+      <link>/texting-api/texting-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/texting-api/texting-api/</guid>
+      <description>문자발송 API</description>
+    </item>
+    
+    <item>
+      <title>문자발송 API</title>
+      <link>/texting-api/message/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/texting-api/message/</guid>
+      <description>weight: 20 title: API Reference 문자발송 API 쿨에스엠에스의 REST API Reference 내용을 담고 있습니다. 참고 REST는 Representational State Transfer의 약자로 API 연동 규격을 명확하게 정의되고 쉽게 구현 할</description>
+    </item>
+    
+    <item>
+      <title>API Credentials</title>
+      <link>/texting-api/apikeys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/texting-api/apikeys/</guid>
+      <description>API Key 관리 REST API 호출을 통해 API Key 생성, 삭제, Secret Key 재생성 등 관리 할 수 있습니다. API Key 생성 Resource URL POST https://solapi.com/credentials/createCredential Request Parameters 필수 입력 파라메터가 없습니다. Request Syntax {} Request Sample curl &amp;quot;https://solapi.com/credentials/createCredential&amp;quot; -H &amp;quot;Authorization: USER user_id=example, date=2017-08-01</description>
+    </item>
+    
+    <item>
+      <title>잔액정보 가져오기</title>
+      <link>/texting-api/cash-api/balance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/texting-api/cash-api/balance/</guid>
+      <description>잔액정보 이 API는 Authentication Info를 제외한 Parameters가 필요 없습니다. 유저의 잔액정보를 가져옵니다. { &amp;quot;data&amp;quot;: { &amp;quot;member_srl&amp;quot;: &amp;quot;382492&amp;quot;, // 사용자 번호 &amp;quot;user_id&amp;quot;: &amp;quot;testsy1&amp;quot;, // 사용자 아이디</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/texting-api/apikeys/apikeys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/texting-api/apikeys/apikeys/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

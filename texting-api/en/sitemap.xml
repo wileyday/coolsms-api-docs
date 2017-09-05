@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/texting-api/en/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/texting-api/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/texting-api/en/"
+                />
+  </url>
+  
+  <url>
+    <loc>/texting-api/en/categories/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/texting-api/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/texting-api/en/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>/texting-api/en/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/texting-api/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/texting-api/en/"
+                />
+  </url>
+  
+  <url>
+    <loc>/texting-api/en/tags/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/texting-api/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/texting-api/en/tags/"
+                />
+  </url>
+  
+</urlset>

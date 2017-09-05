@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/texting-api/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/texting-api/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/texting-api/"
+                />
+  </url>
+  
+  <url>
+    <loc>/texting-api/authentication/</loc>
+  </url>
+  
+  <url>
+    <loc>/texting-api/texting-api/</loc>
+  </url>
+  
+  <url>
+    <loc>/texting-api/message/</loc>
+  </url>
+  
+  <url>
+    <loc>/texting-api/apikeys/</loc>
+  </url>
+  
+  <url>
+    <loc>/texting-api/cash-api/balance/</loc>
+  </url>
+  
+  <url>
+    <loc>/texting-api/message/</loc>
+    <lastmod>2017-03-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/texting-api/apikeys/apikeys/</loc>
+  </url>
+  
+  <url>
+    <loc>/texting-api/apikeys/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/texting-api/cash-api/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/texting-api/categories/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/texting-api/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/texting-api/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>/texting-api/tags/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/texting-api/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/texting-api/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>/texting-api/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/texting-api/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/texting-api/"
+                />
+  </url>
+  
+</urlset>
