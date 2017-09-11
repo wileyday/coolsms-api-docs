@@ -1526,7 +1526,8 @@ resultList</dd>
 conn.request(&quot;POST&quot;,&quot;/GroupMessage/3/group/[GROUP_ID]/addMessages&quot;,'{&quot;messages&quot;: [{&quot;to&quot;: {&quot;recipient&quot;: &quot;[RECIPIENT]&quot;},&quot;from&quot;: &quot;[FROM]&quot;,&quot;text&quot;: &quot;[TEXT]&quot;,&quot;type&quot;:&quot;[TYPE]&quot;}]}',{&quot;Authorization&quot;:&quot;HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]&quot;})
 conn.close()
 </code></pre>
-<pre><code class="language-php">$ch = curl_init();
+<pre><code class="language-php">&lt;?php
+$ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,&quot;https://solapi.com/GroupMessage/3/group/[GROUP_ID]/addMessages&quot;);
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -1549,5 +1550,342 @@ curl_close($ch);
             &quot;statusCode&quot;: &quot;2000&quot;
         }
     ]
+}
+</code></pre>
+<h2>그룹메시지 삭제</h2>
+<p>그룹에 추가된 문자메시지를 삭제합니다.</p>
+<h3>Resource URL</h3>
+<p><code>https://solapi.com/GroupMessage/3/group/{groupId}/deleteMessages</code></p>
+<p>{{&lt; syntaxParser &gt;}}</p>
+<blockquote>
+<p>Request Syntax</p>
+</blockquote>
+<pre><code class="language-json">{
+  &quot;messages&quot;: [
+    {
+      &quot;messageId&quot;: &quot;String&quot;
+    },
+    ...
+  ]
+}
+</code></pre>
+<p>{{&lt; /syntaxParser &gt;}}</p>
+<h3>Required Parameters</h3>
+<dl>
+<dt>messages</dt>
+<dd>Array 형식의 삭제 요청할 메시지ID 목록</dd>
+<dd>
+<dl>
+<dt>messageId</dt>
+<dd><a href="#">메시지의 고유 ID</a></dd>
+</dl>
+</dd>
+</dl>
+<h3>Optional Parameters</h3>
+<p>선택 옵션 사항이 없습니다.</p>
+<h3>Limits</h3>
+<p>하나의 요청에 삭제 할 수 있는 메시지의 최대 갯수는 1,000 개를 넘을 수 없습니다.</p>
+<p>{{&lt; syntaxParser &gt;}}</p>
+<blockquote>
+<p>Response Syntax</p>
+</blockquote>
+<pre><code class="language-json">{
+  &quot;errorCount&quot;: Number,
+  &quot;resultList&quot;: [
+    {
+      &quot;messageId&quot;: &quot;String&quot;,
+      &quot;resultCode&quot;: &quot;String&quot;
+    }
+  ]
+}
+</code></pre>
+<p>{{&lt; /syntaxParser &gt;}}</p>
+<dl>
+<dt>errorCount</dt>
+<dd>오류 카운트
+resultList</dd>
+<dd>Array 형식의 결과 목록</dd>
+<dd>
+<dl>
+<dt>messageId</dt>
+<dd><a href="#">메시지의 고유 ID</a></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt>resultCode</dt>
+<dd>
+<dl>
+<dt><code>Success</code></dt>
+<dd>성공</dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><code>MessageNotFound</code></dt>
+<dd>메시지ID에 해당하는 메시지가 존재하지 않습니다.</dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><code>InternalError</code></dt>
+<dd>내부 서버 오류로 인해 정상처리 되지 않았습니다.</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<h3>Errors</h3>
+<p>공통적으로 일어날 수 있는 오류 코드를 확인하시려면 <a href="#">오류코드</a> 를 참고하세요.</p>
+<blockquote>
+<p>Request Sample</p>
+</blockquote>
+<pre><code class="language-bash">$ curl -X POST https://solapi.com/GroupMessage/3/group/[GROUP_ID]/deleteMessages \
+    --header &quot;Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]&quot; \ 
+    -d '{&quot;messages&quot;: [{&quot;messageId&quot;: &quot;[MESSAGE_ID]&quot;}]}'
+</code></pre>
+<pre><code class="language-javascript">request(
+  {
+    url: &quot;https://solapi.com/GroupMessage/3/group/[GROUP_ID]/deleteMessages&quot;, 
+    method: 'post',
+    headers: {
+      'Authorization': `HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]`
+    },
+    json: {
+      &quot;messages&quot;: [
+        {
+          &quot;messageId&quot;: &quot;[MESSAGE_ID]&quot;
+        }
+      ]
+    }
+  }
+)
+</code></pre>
+<pre><code class="language-python">conn = HTTPSConnection('solapi.com', '443')
+conn.request(&quot;POST&quot;,&quot;/GroupMessage/3/group/[GROUP_ID]/deleteMessages&quot;,'{&quot;messages&quot;: [{&quot;messageId&quot;: &quot;[MESSAGE_ID]&quot;}]}',{&quot;Authorization&quot;:&quot;HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]&quot;})
+conn.close()
+</code></pre>
+<pre><code class="language-php">&lt;?php
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,&quot;https://solapi.com/GroupMessage/3/group/[GROUP_ID]/deleteMessages&quot;);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+ 'Authorization: HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]'
+));
+curl_setopt($ch, CURLOPT_POSTFIELDS, '{&quot;messages&quot;: [{&quot;messageId&quot;: &quot;[MESSAGE_ID]&quot;}]}');
+curl_exec($ch);
+curl_close($ch);
+</code></pre>
+<blockquote>
+<p>Response Sample</p>
+</blockquote>
+<pre><code class="language-json">{
+    &quot;errorCount&quot;: 0,
+    &quot;resultList&quot;: [
+        {
+            &quot;messageId&quot;: &quot;MID1234567890&quot;,
+            &quot;resultCode&quot;: &quot;Success&quot;
+        }
+    ]
+}
+</code></pre>
+<h2>그룹메시지 목록</h2>
+<p>그룹에 추가된 문자메시지 목록을 조회합니다.</p>
+<h3>Resource URL</h3>
+<p><code>https://solapi.com/GroupMessage/3/group/{groupId}/getMessageList</code></p>
+<p>{{&lt; syntaxParser &gt;}}</p>
+<blockquote>
+<p>Request Syntax</p>
+</blockquote>
+<pre><code class="language-json">{
+  &quot;offset&quot;: Number,
+  &quot;limit&quot;: Number
+}
+</code></pre>
+<p>{{&lt; /syntaxParser &gt;}}</p>
+<h3>Required Parameters</h3>
+<p>필수 입력 사항이 없습니다.</p>
+<h3>Optional Parameters</h3>
+<dl>
+<dt>offset</dt>
+<dd>가져올 레코드 시작 위치</dd>
+<dd>
+<dl>
+<dt>입력 가능한 값</dt>
+<dd>
+<dl>
+<dt><code>0 ~ 999999</code></dt>
+<dd>기본값은 0 입니다
+limit</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dd>가져올 레코드의 수</dd>
+<dd>
+<dl>
+<dt>입력 가능한 값</dt>
+<dd>
+<dl>
+<dt><code>1 ~ 1000</code></dt>
+<dd>기본값은 20 입니다</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>{{&lt; syntaxParser &gt;}}</p>
+<blockquote>
+<p>Response Syntax</p>
+</blockquote>
+<pre><code class="language-json">{
+  &quot;totalCount&quot;: Number,
+  &quot;offset&quot;: Number,
+  &quot;limit&quot;: Number,
+  &quot;messageList&quot;: {
+    &quot;messageId&quot;: {
+      &quot;to&quot;: &quot;String&quot;,
+      &quot;from&quot;: &quot;String&quot;,
+      &quot;country&quot;: &quot;String&quot;,
+      &quot;type&quot;: &quot;String&quot;,
+      &quot;text&quot;: &quot;String&quot;,
+      &quot;scheduledDate&quot;: &quot;String&quot;,
+      &quot;statusCode&quot;: &quot;String&quot;
+    },
+    ...
+  }
+}
+</code></pre>
+<p>{{&lt; /syntaxParser &gt;}}</p>
+<dl>
+<dt>totalCount</dt>
+<dd>레코드 전체 갯수
+offset</dd>
+<dd>가져올 레코드 시작 위치</dd>
+<dd>
+<dl>
+<dt>입력 가능한 값</dt>
+<dd>
+<dl>
+<dt><code>0 ~ 999999</code></dt>
+<dd>기본값은 0 입니다
+limit</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dd>가져올 레코드의 수</dd>
+<dd>
+<dl>
+<dt>입력 가능한 값</dt>
+<dd>
+<dl>
+<dt><code>1 ~ 1000</code></dt>
+<dd>기본값은 20 입니다
+messageList</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dd>메시지ID를 Key로 한 Map 형식의 메시지 목록이 리턴됩니다.</dd>
+<dd>
+<dl>
+<dt>messageId</dt>
+<dd><a href="#">메시지의 고유 ID</a></dd>
+<dd>
+<dl>
+<dt>to</dt>
+<dd>메시지를 받는 사람의 전화번호인 <a href="#">수신번호</a></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt>from</dt>
+<dd>보내는 사람의 전화번호인 <a href="#">발신번호</a>로 보통 고객센터의 전화번호를 사용하며 사전에 등록되어 있어야 합니다.</dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt>country</dt>
+<dd>국가번호</dd>
+</dl>
+</dd>
+<dd>type
+:</dd>
+<dd>
+<dl>
+<dt>text</dt>
+<dd>메시지 내용</dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt>scheduledDate</dt>
+<dd>YYYY-MM-DD HH:MI:SS 포맷의<a href="#">예약시간.</a></dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt>statusCode</dt>
+<dd>메시지의 상태를 나타내는 4자리의 숫자로 구성된 코드입니다. <a href="#">메시지상태코드</a> 에서 코드 목록을 확인하실 수 있습니다.</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<h3>Errors</h3>
+<p>공통적으로 일어날 수 있는 오류 코드를 확인하시려면 <a href="#">오류코드</a> 를 참고하세요.</p>
+<blockquote>
+<p>Request Sample</p>
+</blockquote>
+<pre><code class="language-bash">$ curl -X POST https://solapi.com/GroupMessage/3/group/[GROUP_ID]/getMessageList \
+    --header &quot;Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]&quot; \
+    -d '{&quot;offset&quot;: 0,&quot;limit&quot;: 20}'
+</code></pre>
+<pre><code class="language-javascript">request(
+  {
+    url: &quot;https://solapi.com/GroupMessage/3/group/[GROUP_ID]/getMessageList&quot;,
+    method: 'post',
+    headers: {
+      'Authorization': `HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE]}, Salt=[UNIQID], Signature=[SIGNATURE]`
+    },
+    json: {
+      &quot;offset&quot;: 0,
+      &quot;limit&quot;: 20
+    }
+  }
+)
+</code></pre>
+<pre><code class="language-python">conn = HTTPSConnection('solapi.com', '443')
+conn.request(&quot;POST&quot;,&quot;/GroupMessage/3/group/[GROUP_ID]/getMessageList&quot;,'{&quot;offset&quot;: 0,&quot;limit&quot;: 2}',{&quot;Authorization&quot;:&quot;HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]&quot;})
+conn.close()
+</code></pre>
+<pre><code class="language-php">&lt;?php
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,&quot;https://solapi.com/GroupMessage/3/group/[GROUP_ID]/getMessageList&quot;);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+ 'Authorization: HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]'
+));
+curl_setopt($ch, CURLOPT_POSTFIELDS, '{&quot;offset&quot;: 0,&quot;limit&quot;: 20}');
+curl_exec($ch);
+curl_close($ch);
+</code></pre>
+<blockquote>
+<p>Response Sample</p>
+</blockquote>
+<pre><code class="language-json">{
+    &quot;totalCount&quot;: 1,
+    &quot;offset&quot;: 0,
+    &quot;limit&quot;: 20,
+    &quot;messageList&quot;: {
+        &quot;M3V20170911170756D7NNY9AARGNB6BG&quot;: {
+            &quot;to&quot;: &quot;01000000001&quot;,
+            &quot;from&quot;: &quot;0212345678&quot;,
+            &quot;text&quot;: &quot;테스트 문자&quot;,
+            &quot;type&quot;: &quot;AUTO&quot;,
+            &quot;statusCode&quot;: &quot;2000&quot;
+        }
+    }
 }
 </code></pre>
