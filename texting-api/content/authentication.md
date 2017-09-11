@@ -67,9 +67,8 @@ Signature는 중복사용이 불가하며 15분 안에 전송되는 요청(Reque
 > Request Sample
 
 ```bash
-curl -X POST https://solapi.com/MessageLog/3/getSentMessages 
---header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[ISO 8601 DATE], Salt=[UNIQID], Signature=[SIGNATURE]"
-
+$ curl -X POST https://solapi.com/MessageLog/3/getSentMessages \
+    --header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[ISO 8601 DATE], Salt=[UNIQID], Signature=[SIGNATURE]"
 ```
 ```javascript
 request(

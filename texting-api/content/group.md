@@ -205,9 +205,9 @@ title: 그룹 메시지
 > Request Sample
 
 ```bash
-curl -X POST https://solapi.com/GroupMessage/3/createGroup 
---header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[ISO 8601 DATE], Salt=[UNIQID], Signature=[SIGNATURE]"
--d '{"groupOptions": {	}}'
+$ curl -X POST https://solapi.com/GroupMessage/3/createGroup \
+    --header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[ISO 8601 DATE], Salt=[UNIQID], Signature=[SIGNATURE]" \
+    -d '{"groupOptions": {}}'
 ```
 ```javascript
 request(
@@ -245,7 +245,7 @@ curl_close($ch);
 
 ```json
 {
-  "groupId":"G3V201709081629415CXXOQAMCEOPZ1U",
+  "groupId":"[GROUP_ID]",
   "groupOptions":
   {
     "appId":"null",
@@ -299,7 +299,15 @@ curl_close($ch);
 ### Resource URL
 `https://solapi.com/GroupMessage/3/group/{groupId}/getGroupInfo`
 
-### Request Syntax
+{{% syntaxParser %}}
+
+> Request Syntax
+```json
+
+```
+
+{{% /syntaxParser %}}
+
 ### Required Parameters
 필수 입력 사항이 없습니다.
 
@@ -361,10 +369,11 @@ curl_close($ch);
 : **groupId**
  : 메시지가 속한 [그룹의 고유 ID](#)
  : 메시지 아이디의 형식은 아래와 같습니다.
- : `G3V20170603213426FCCBJW1J3H9GAAGPPPDDDDDDDDDDDDDDHHHHHHHHHHHHHHH`
- : `123 (3)`
- : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`12345678901234 (14)`
- : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`123456789012345 (15)`
+ : `G3V20170603213426FCCBJW1J3H9GAAG`
+ : `PPPDDDDDDDDDDDDDDHHHHHHHHHHHHHHH`
+ : `PPP(3)`
+ : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`DDDDDDDDDDDDDD(14)`
+ : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`HHHHHHHHHHHHHHH(15)`
  : `P : Preamble (3)`
  : `D : Date (14)`
  : `H : Hash Key (15)`
@@ -424,3 +433,82 @@ curl_close($ch);
 : **ResourceNotFound**
  : 존재하지 않는 그룹, 이미 TTL 시간이 만료되었거나 올바르지 않은 그룹아이디를 입력 
  : HTTP Status Code: 404
+
+> Request Sample
+
+```bash
+$ curl -X POST https://solapi.com/GroupMessage/3/group/[GROUP_ID]/getGroupInfo \
+    --header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[ISO 8601 DATE], Salt=[UNIQID], Signature=[SIGNATURE]"
+```
+```javascript
+request(
+  {
+    url: "https://solapi.com/GroupMessage/3/group/[GROUP_ID]/getGroupInfo", 
+    method: 'post',
+    headers: {
+      'Authorization': `HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]`
+    },
+    json: {}
+  }
+)
+```
+```python
+conn = HTTPSConnection('solapi.com', '443')
+conn.request("POST","/GroupMessage/3/group/[GROUP_ID]/getGroupInfo",'',{"Authorization":"HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]"})
+conn.close()
+```
+```php
+<?php
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,"https://solapi.com/GroupMessage/3/group/[GROUP_ID]/getGroupInfo"); //requset URL
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]'));
+curl_exec($ch);
+```
+
+> Response Sample
+
+```json
+{
+    "groupId": "[GROUP_ID]",
+    "groupOptions": {
+        "appId": "null",
+        "appVersion": "null",
+        "apiVersion": "3",
+        "forceSms": "false",
+        "onlyAta": "false",
+        "osPlatform": "null",
+        "devLanguage": "null",
+        "sdkVersion": "null"
+    },
+    "count": {
+        "sms": 0,
+        "lms": 0,
+        "mms": 0,
+        "ata": 0,
+        "cta": 0,
+        "push": 0,
+        "total": 0
+    },
+    "price": {
+        "unitPrice": {
+            "sms": 20,
+            "lms": 50,
+            "mms": 200,
+            "ata": 15,
+            "cta": 20,
+            "push": 5
+        },
+        "calculatedPrice": {
+            "sms": 0,
+            "lms": 0,
+            "mms": 0,
+            "ata": 0,
+            "cta": 0,
+            "push": 0,
+            "total": 0
+        }
+    },
+    "ttl": 6706
+}
+```
