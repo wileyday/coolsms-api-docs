@@ -630,6 +630,19 @@ curl_exec($ch);
 curl_close($ch);
 ```
 
+> Response Sample
+
+```json
+{
+    "errorCount": 0,
+    "resultList": [
+        {
+            "groupId": "[GROUP_ID]",
+            "resultCode": "Success"
+        }
+    ]
+}
+```
 
 
 
