@@ -645,5 +645,179 @@ curl_close($ch);
 ```
 
 
+## 그룹 목록
+생성된 그룹목록을 리턴합니다.
+
+### Resource URL
+`https://solapi.com/GroupMessage/3/getGroupList`
+
+> Request Syntax
+```json
+{
+  "offset": Number,
+  "limit": Number
+}
+```
+
+### Required Parameters
+필수 입력 사항이 없습니다.
+
+### Optional Parameters
+offset
+  : 가져올 레코드 시작 위치
+    : `0 ~ 999999`
+      : 기본값은 0 입니다
+limit
+  : 가져올 레코드의 수
+    : `1 ~ 1000`
+      : 기본값은 20 입니다
+
+> Response Syntax
+```json
+{
+  "totalCount": Number,
+  "offset": Number,
+  "limit": Number,
+  "groupList": {
+    "groupId": {
+      "groupOptions": {
+        "appId": "String",
+        "appVersion": "String",
+        "mode": "String",
+        "forceSms": "String",
+        "onlyAta": "String",
+        "osPlatform": "String",
+        "devLanguage": "String",
+        "sdkVersion": "String",
+        "apiVersion": "String"
+      },
+      "count": {
+        "sms": Number,
+        "lms": Number,
+        "mms": Number,
+        "ata": Number,
+        "cta": Number,
+        "push": Number
+      },
+      "price": {
+        "unitPrice": {
+          "sms": Number,
+          "lms": Number,
+          "mms": Number,
+          "ata": Number,
+          "cta": Number,
+          "push": Number
+        },
+        "calculatedPrice": {
+          "sms": Number,
+          "lms": Number,
+          "mms": Number,
+          "ata": Number,
+          "cta": Number,
+          "push": Number,
+          "total": Number
+        }
+      }
+    },
+    ...
+  }
+}
+```
+
+totalCount
+  : 생성된 그룹 갯수
+offset
+  : 가져올 레코드 시작 위치
+limit
+  : 가져올 레코드 수
+groupList
+  : Map 형식의 그룹 목록을 리턴합니다.
+  : groupId
+    : 메시지가 속한 그룹의 고유 ID
+    : groupOptions
+      : appId
+        : 어플리케이션을 구분하는 ID 로 사용되며 솔루션 제공에 대한 수수료 정산의 기준이 되는 ID 이기도 합니다. 자세한 안내는 [http://www.coolsms.co.kr/sp](http://www.coolsms.co.kr/sp) 을 참고하세요.
+      : appVersion
+        : 어플리케이션 버전, 예) Purplebook 4.1
+      : testMode
+        : 값이 true 이면 CARRIER 시뮬레이터로 시뮬레이션됩니다. 수신번호를 반드시 01000000000 ~ 01000009999 범위 내에서 테스트합니다. 결과값은 60으로 고정됩니다.
+        : 입력 가능한 값
+          : `false` *default*
+            : 메시지를 실제 발송합니다.
+          : `true`
+            : 테스트 모드로 실제 발송하지 않고 내부 시뮬레이션을 타게 합니다.
+      : forceSms
+        : 누리고푸시를 사용하더라도 푸시로 발송하지 않고 문자메시지로 발송합니다.
+        : 입력 가능한 값
+          : `true`
+            : 강제 문자 발송
+          : `false` *default*
+            : 푸시 발송 실패시 문자 발송
+      : onlyAta
+      : osPlatform
+        : 클라이언트의 OS 및 플랫폼 버전, 예) CentOS 6.6
+      : devLanguage
+        : 개발 프로그래밍 언어, 예) PHP 5.3.3
+      : sdkVersion
+        : SDK 버전, 예) PHP SDK 1.5
+      : apiVersion
+        : API 버전
+    : count
+      : 발송하려는 메시지의 타입별 갯수
+    : price
+      : unitPrice
+        : 발송하려는 메시지의 타입별 단가
+      : calculatedPrice
+        : 발송하려는 메시지의 타입별 비용
+
+> Request Sample
+
+```bash
+$ curl -X POST https://solapi.com/GroupMessage/3/getGroupList \
+    --header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[SALT], Signature=[SIGNATURE]" \ 
+    -d '{"offset": [OFFSET], "limit": [LIMIT]}'
+```
+```javascript
+request(
+  {
+    url: "https://solapi.com/GroupMessage/3/getGroupList", //requset url
+    method: 'post',
+    headers: {
+      'Authorization': `HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[SALT], Signature=[SIGNATURE]`
+    },
+    json: {
+      "offset": [OFFSET],
+      "limit": [LIMIT]
+    }
+  }
+)
+```
+```python
+conn = HTTPSConnection('solapi.com', '443')
+conn.request("POST","/GroupMessage/3/getGroupList",'{"offset": [OFFSET], "limit": [LIMIT]}',{"Authorization":"HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]"})
+conn.close()
+```
+```php
+<?php
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,"https://solapi.com/GroupMessage/3/getGroupList");
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+ 'Authorization: HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]'
+));
+curl_setopt($ch, CURLOPT_POSTFIELDS, '{"offset": [OFFSET], "limit": [LIMIT]}');
+curl_exec($ch);
+curl_close($ch);
+```
+
+> Response Sample
+
+```json
+{
+    "offset": 0,
+    "limit": 20,
+    "groupList": {}
+}
+```
 
 

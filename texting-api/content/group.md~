@@ -1062,41 +1062,11 @@ groupList</dd>
     --header &quot;Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[SALT], Signature=[SIGNATURE]&quot; \ 
     -d '{&quot;offset&quot;: [OFFSET], &quot;limit&quot;: [LIMIT]}'
 </code></pre>
-<pre><code class="language-javascript">request(
-  {
-    url: &quot;https://solapi.com/GroupMessage/3/getGroupList&quot;, //requset url
-    method: 'post',
-    headers: {
-      'Authorization': `HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[SALT], Signature=[SIGNATURE]`
-    },
-    json: {
-      &quot;offset&quot;: [OFFSET],
-      &quot;limit&quot;: [LIMIT]
-    }
-  }
-)
-</code></pre>
-<pre><code class="language-python">conn = HTTPSConnection('solapi.com', '443')
-conn.request(&quot;POST&quot;,&quot;/GroupMessage/3/getGroupList&quot;,'{&quot;offset&quot;: [OFFSET], &quot;limit&quot;: [LIMIT]}',{&quot;Authorization&quot;:&quot;HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]&quot;})
-conn.close()
-</code></pre>
-<pre><code class="language-php">&lt;?php
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL,&quot;https://solapi.com/GroupMessage/3/getGroupList&quot;);
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
- 'Authorization: HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]'
-));
-curl_setopt($ch, CURLOPT_POSTFIELDS, '{&quot;offset&quot;: [OFFSET], &quot;limit&quot;: [LIMIT]}');
-curl_exec($ch);
-curl_close($ch);
-</code></pre>
 <blockquote>
 <p>Response Sample</p>
 </blockquote>
 <pre><code class="language-json">{
-    &quot;offset&quot;: 0,
-    &quot;limit&quot;: 20,
-    &quot;groupList&quot;: {}
+  &quot;offset&quot;: 20, 
+  &quot;limit&quot;: 25
 }
 </code></pre>
