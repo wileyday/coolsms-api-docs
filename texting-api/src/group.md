@@ -651,6 +651,8 @@ curl_close($ch);
 ### Resource URL
 `https://solapi.com/GroupMessage/3/getGroupList`
 
+{{< syntaxParser >}}
+
 > Request Syntax
 ```json
 {
@@ -658,6 +660,8 @@ curl_close($ch);
   "limit": Number
 }
 ```
+
+{{< /syntaxParser >}}
 
 ### Required Parameters
 필수 입력 사항이 없습니다.
@@ -671,6 +675,8 @@ limit
   : 가져올 레코드의 수
     : `1 ~ 1000`
       : 기본값은 20 입니다
+
+{{< syntaxParser >}}
 
 > Response Syntax
 ```json
@@ -723,6 +729,8 @@ limit
   }
 }
 ```
+
+{{< /syntaxParser >}}
 
 totalCount
   : 생성된 그룹 갯수
@@ -820,4 +828,255 @@ curl_close($ch);
 }
 ```
 
+## 그룹메시지 추가
+그룹에 발송할 메시지를 추가합니다.
 
+### Resource URL
+`https://solapi.com/GroupMessage/3/group/{groupId}/addMessages`
+
+{{< syntaxParser >}}
+
+> Request Syntax
+
+```json
+{
+  "messages": [
+    {
+      "to": { /* required */
+        "recipient": "String",
+        "recipients": [
+          "String",
+          ...
+        ],
+        "recipientsWithCustomFields": [
+          {
+            "recipient": "String",
+            "customFields": {
+              "myMessageId": "String",  /* 사용자 정의 필드 */
+              "mySequence": Number,     /* 사용자 정의 필드 */
+              ...
+            }
+          },
+        ],
+      },
+      "from": "String", /* required */
+      "text": "String", /* required */
+      "type": "String",
+      "country": "String",
+      "subject": "String",
+      "imageId": "String",
+      "kakaoOptions": {
+        "senderKey": "String",
+        "templateCode": "String",
+        "buttonName": "String",
+        "buttonUrl": "String",
+        "disableSms": "Boolean"
+      }
+    },
+    ...
+  ],
+}
+```
+
+{{< /syntaxParser >}}
+
+### Required Parameters
+messages
+  : Array 형식의 메시지 발송 정보
+  : to
+    : 발송하려는 수신번호를 입력합니다. 수신번호는 대시(-) 등 기호를 제외한 번호만 입력합니다. 세 개의 서브파라메터 recipient , recipients , recipientsWithCustomFields 를 통틀어 1개 이상의 수신번호가 입력되어야 합니다. 한번 요청에 수신번호는 1,000 개를 넘을 수 없습니다.
+    : recipient
+      : 하나의 수신번호를 입력합니다.
+    : recipients
+      : 배열 형식의 수신번호 목록을 입력합니다.
+    : recipientsWithCustomFields
+      : recipient
+        : 하나의 수신번호를 입력합니다.
+      : customFields
+        : 사용자정의 필드를 개수 제한없이 총 160 자까지 입력할 수 있습니다. 요청에 대한 응답에 그대로 리턴되며 발송 이후 메시지로그에서도 조회 가능합니다.
+  : from
+    : 보내는 사람의 전화번호인 [발신번호](#) 로 보통 고객센터의 전화번호를 사용하며 사전에 등록되어 있어야 합니다.
+  : text
+    : 메시지 내용
+
+### Optional Parameters
+messages
+  : Array 형식의 메시지 발송 정보
+  : type
+    : 메시지 유형을 입력합니다.
+    : 입력 가능한 값
+      : `AUTO` *default*
+        : 메시지 내용에 따라 SMS, LMS, MMS 를 발송합니다. 국가번호 82(한국)외 해외문자인 경우 SMS 로 자동변경.
+      : `SMS`
+        : 영자 90 자(한글 45 자) 이하의 단문메시지를 발송합니다.
+      : `LMS`
+        : 영자 2,000 자(한글 1,000 자) 이하의 장문메시지를 발송합니다.
+      : `MMS`
+        : 영자 2,000 자(한글 1,000 자) 이하의 메시지와 1개의 이미지 전송. 이미지는 300KB 이하, 2048x2048픽셀 이하인 JPEG, PNG, GIF 형식의 파일.
+      : `ATA`
+        : 한/영 포함 1,000 자의 텍스트를 발송할 수 있는 카카오톡의 [알림톡](#)
+      : `CTA`
+        : 한/영 포함 1,000 자의 텍스트를 보낼 수 있는 카카오톡의 [친구톡](#)
+    : 국가번호 82(한국)외 해외문자인 경우 SMS 만 발송가능하고 LMS, MMS 는 발송불가.
+  : country
+    : 발송하려는 국가의 국가번호를 입력합니다.
+    : 입력 가능한 값
+      : `82` *default*
+        : 한국
+      : `81`
+        : 일본
+      : `86`
+        : 중국
+      : `886`
+        : 대만
+      : `1`
+        : 미국
+      : `기타`
+        : 해당 국가의 국제전화 국가코드
+        : ***참고***
+          : 국제전화 국가코드는 [ITU-T](https://ko.wikipedia.org/wiki/ITU-T) 의 [E.164](https://en.wikipedia.org/wiki/E.164) 에서 지정한 [Country Calling Codes](https://en.wikipedia.org/wiki/List_of_country_calling_codes) 을 참고하세요.
+    : 국가번호가 82(한국) 일 때에만 LMS, MMS 발송 가능합니다. 이외 국가에서는 SMS 만 발송 가능합니다.
+  : subject
+    : type이 LMS, MMS 일 때 제목
+  : imageId
+    : 이미지 으로 등록할 때 리턴되는 [이미지](#) ID
+  : kakaoOptions
+    : 카카오톡 메시지 옵션
+    : senderKey
+      : 알림톡 Sender Key
+    : templateCode
+      : 알림톡 Template Code
+    : buttonName
+      : 카카오톡 버튼 이름, 10 자 제한
+    : buttonUrl
+      : 카카오톡 버튼 URL, 100 자 제한
+    : disableSms
+      : 알림톡 및 친구톡 발송에 실패하여도 문자메시지로 대체하여 발송하지 않습니다.
+      : 입력 가능한 값
+        : `true`
+          : 알림톡 실패시 문자로 대체하지 않음
+        : `false` *default*
+          : 알림톡 실패시 문자로 대체 발송
+
+### Limits
+그룹메시지 추가 API에 다음 3가지 제한사항이 있습니다.
+  : - 요청의 총 데이터 크기는 10MB를 넘을 수 없습니다.
+  : - 한번의 요청(Request)에 대해 수신번호는 1,000 개를 넘을 수 없습니다.
+  : - 하나의 그룹에 담을 수 있는 메시지는 1,000,000 개 입니다.
+
+{{< syntaxParser >}}
+
+> Response Syntax
+```json
+{
+  "errorCount": Number,
+  "resultList": [
+    {
+      "recipient": "String",
+      "messageId": "String",
+      "type": "String",
+      "statusCode": "String",
+      "customFields": {
+        ...
+      }
+    }
+  ]
+}
+```
+{{< /syntaxParser >}}
+
+errorCount
+  : 오류 카운트
+resultList
+  : 수신번호 갯수만큼의 Object를 포함한 Array
+  : recipient
+    : 수신번호
+  : messageId
+    : [메시지의 고유 ID](#)
+  : type
+    : 리턴 가능한 값
+      : `SMS`
+        : 영자 90 자(한글 45 자) 이하의 단문메시지
+      : `LMS`
+        : 영자 2,000 자(한글 1,000 자) 이하의 장문메시지
+      : `MMS`
+        : 영자 2,000 자(한글 1,000 자) 이하의 텍스트와 1개의 [이미지](#) 를 포함하는 메시지
+      : `ATA`
+        : 한/영 포함 1,000 자의 텍스트를 발송할 수 있는 카카오톡의 [알림톡](#)
+      : `CTA`
+        : 한/영 포함 1,000 자의 텍스트를 보낼 수 있는 카카오톡의 [친구톡](#)
+    : 국가번호 82(한국)외 해외문자인 경우 SMS 만 발송가능하고 LMS, MMS 는 발송불가.
+  : statusCode
+    : 메시지의 상태를 나타내는 4자리의 숫자로 구성된 코드입니다. [메시지상태코드](#) 에서 코드 목록을 확인하실 수 있습니다.
+  : customFields
+    : 요청 때 입력한 값이 그대로 리턴되며 메시지로그에서도 확인할 수 있습니다.
+
+### Errors
+아래 오류 중 하나가 발생할 수 있습니다.
+
+RecipientsTooMany
+  : 입력된 수신번호가 1000개를 넘음
+  : HTTP Status Code: 413
+
+공통적으로 일어날 수 있는 오류 코드를 확인하시려면 [오류코드](#)를 참고하세요.
+
+> Request Sample
+```bash
+$ curl -X POST  https://solapi.com/GroupMessage/3/group/[GROUP_ID]/addMessages \
+    --header "Authorization : HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATRUE]" \
+    -d '{"messages": [{"to": {"recipient": "[RECIPIENT]"},"from": "[FROM]","text": "[TEXT]","type":"[TYPE]"}]}'
+```
+```javascript
+request(
+  {
+    url: "https://solapi.com/GroupMessage/3/group/[GROUP_ID]/addMessages", 
+    method: 'post',
+    headers: {
+      'Authorization': `HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[SALT], Signature=[SIGNATURE]`
+    },
+    json: {
+      "messages": [
+        {
+          "to": {
+            "recipient": "[RECIPIENT]"
+          },
+          "from": "[FROM]",
+          "text": "[TEXT]",
+          "type": "[TYPE]"
+        }
+      ]
+    }
+  }
+)
+```
+```python
+conn = HTTPSConnection('solapi.com', '443')
+conn.request("POST","/GroupMessage/3/group/[GROUP_ID]/addMessages",'{"messages": [{"to": {"recipient": "[RECIPIENT]"},"from": "[FROM]","text": "[TEXT]","type":"[TYPE]"}]}',{"Authorization":"HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[UNIQID], Signature=[SIGNATURE]"})
+conn.close()
+```
+```php
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,"https://solapi.com/GroupMessage/3/group/[GROUP_ID]/addMessages");
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+ 'Authorization: HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[SALT], Signature=[SIGNATURE]'
+));
+curl_setopt($ch, CURLOPT_POSTFIELDS, '{"messages": [{"to": {"recipient": "[RECIPIENT]"},"from": "[FROM]","text": "[TEXT]","type":"[TYPE]"}]}');
+curl_exec($ch);
+curl_close($ch);
+```
+
+> Response Sample
+```json
+{
+    "errorCount": 0,
+    "resultList": [
+        {
+            "recipient": "01000000001",
+            "messageId": "M3V20170911164820TCBLKDEWDTA8VOK",
+            "type": "AUTO",
+            "statusCode": "2000"
+        }
+    ]
+}
+```
