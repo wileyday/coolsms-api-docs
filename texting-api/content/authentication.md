@@ -54,7 +54,7 @@ Signature의 재사용을 막기위해서 입력된 DateTime이 표준시간을 
 : ***참고***
  : 날짜와 시간을 표현하는데 있어서 시차와 표기법이 틀릴 수 있으므로 혼돈이 없도록 국제규격 ISO 8601을 따릅니다. [ISO 8601](https://ko.wikipedia.org/wiki/ISO_8601) 을 참고하세요.
 
-# Signature 생성
+## Signature 생성
 
 클라이언트에서 DateTime + Salt 를 데이터로, API Secret을 Key로 사용하여 HMAC(Hash-based Message Authentication Code)을 만들어진 Signature를 서버로 보내면, 서버 쪽에서도 동일한 방식으로 만들어 비교하게 됩니다. API Secret은 Signature를 생성할 때만 사용하고 외부에 노출되지 않도록 주의해야 합니다.
 
@@ -99,33 +99,24 @@ curl_exec($ch);
 curl_close($ch);
 ?>
 ```
-Errors
----------------
+## Errors
 
 아래의 오류가 발생할 수 있습니다.
 
-**InvalidAPIKey**
-
-  유효한 API Key가 아님
+: **InvalidAPIKey**
+ : 유효한 API Key가 아님
+ : HTTP Status Code: 403
   
-  HTTP Status Code: 403
-  
-**SignatureDoesNotMatch**
+: **SignatureDoesNotMatch**
+ : 생성한 Signature가 일치하지 않음
+ : HTTP Status Code: 403
 
-  생성한 Signature가 일치하지 않음
+: **RequestTimeTooSkewed**
+ : 시간 값이 서버 시간을 15분 이상 벗어남
+ : HTTP Status Code: 403
   
-  HTTP Status Code: 403
+: **DuplicatedSignature**
+ : 15분 안에 동일한 signature 값
+ : HTTP Status Code: 403
 
-**RequestTimeTooSkewed**
-
-  시간 값이 서버 시간을 15분 이상 벗어남
-  
-  HTTP Status Code: 403
-  
-**DuplicatedSignature**
-
-  15분 안에 동일한 signature 값
-  
-  HTTP Status Code: 403
-
-공통적으로 일어날 수 있는 오류 코드를 확인하시려면 :doc:`errors` 를 참고하세요.
+공통적으로 일어날 수 있는 오류 코드를 확인하시려면 오류코드를 참고하세요.
