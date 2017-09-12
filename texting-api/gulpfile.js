@@ -1,5 +1,5 @@
-const gulp = require('gulp');
 const path = require('path');
+const gulp = require('gulp');
 const docbuild = require('docbuild');
 
 gulp.task('docbuild', () => {

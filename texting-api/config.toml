@@ -1,4 +1,4 @@
-baseURL = "/texting-api"
+baseURL = "/texting-api/"
 publishDir = "../public/texting-api"
 languageCode = "ko"
 title = "문자전송 API Reference"
