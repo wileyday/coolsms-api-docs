@@ -15,11 +15,9 @@ REST API를 요청(Request)할 때 HTTP 헤더에 Authorization 정보를 추가
 
 ![Credential Information](/images/credential_info.png)
 
-{{% syntaxParser %}}
+## Request Syntax
 
-> Request Syntax
-
-```json
+```syntax
 
 {
   Authorization: <AuthenticationMethod> apiKey=<ApiKey>,
@@ -29,7 +27,6 @@ REST API를 요청(Request)할 때 HTTP 헤더에 Authorization 정보를 추가
 }
 
 ```
-{{% /syntaxParser %}}
 
   : AuthenticationMethod
     : Signature 생성 알고리즘으로 HMAC-SHA256, HMAC-MD5 중에 하나를 선택할 수 있습니다.
