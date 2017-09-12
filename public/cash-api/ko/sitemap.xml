@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/cash-api/balance/</loc>
+  </url>
+  
+  <url>
+    <loc>/cash-api/categories/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/cash-api/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/cash-api/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>/cash-api/tags/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/cash-api/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/cash-api/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>/cash-api/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/cash-api/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/cash-api/"
+                />
+  </url>
+  
+</urlset>
