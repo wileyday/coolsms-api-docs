@@ -109,7 +109,7 @@ groupOptions
 
 ### Response Syntax
 
-```json
+```syntax
 {
   "groupId": "String",
   "groupOptions": {
@@ -306,7 +306,7 @@ curl_close($ch);
 `https://solapi.com/GroupMessage/3/group/{groupId}/getGroupInfo`
 
 ### Request Syntax
-```json
+```syntax
 
 ```
 
@@ -318,7 +318,7 @@ curl_close($ch);
 
 ### Response Syntax
 
-```json
+```syntax
 {
   "groupId": "String",
   "groupOptions": {
@@ -511,7 +511,7 @@ curl_close($ch);
 
 ### Request Syntax
 
-```json
+```syntax
 {
   "groups": [
     {
@@ -536,7 +536,7 @@ groups
 
 ### Response Syntax
 
-```json
+```syntax
 {
   "errorCount": Number,
   "resultList": [
@@ -1060,7 +1060,7 @@ curl_close($ch);
 
 ### Request Syntax
 
-```json
+```syntax
 {
   "messages": [
     {
@@ -1350,18 +1350,24 @@ resultCode
 공통적으로 일어날 수 있는 오류 코드를 확인하시려면 [오류코드](#) 를 참고하세요.
 
 ResourceNotFound
-  : 존재하지 않는 그룹, 이미 TTL 시간이 만료되었거나 올바르지 않은 그룹아이디를 입력
+  
+  : 존재하지 않는 그룹, 
+  : 이미 TTL 시간이 만료되었거나 올바르지 않은 그룹아이디를 입력
+  
   : HTTP Status Code: 404
 
 NotEnoughBalance
   : 잔액이 없습니다.
+  
   : HTTP Status Code: 402
 
 NothingToSend
   : 보낼 메시지가 없습니다.
+  
   : HTTP Status Code: 404
 
 > Request Sample
+
 ```bash
 
 ```
@@ -1369,7 +1375,7 @@ NothingToSend
 > Response Sample
 ```json
 { 
-  resultCode: 'Success' 
+  resultCode: "Success" 
 }
 ```
 

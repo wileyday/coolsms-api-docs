@@ -9,11 +9,11 @@ REST API를 요청(Request)할 때 HTTP 헤더에 Authorization 정보를 추가
 
 *참고*
 
-  Authorization 헤더정보를 전달하는 방식은 HTTP에서 인증을 위한 수단으로 널리 사용되고 있습니다.  `Basic access authentication <https://en.wikipedia.org/wiki/Basic_access_authentication>`_ 을 참고하세요.
+  Authorization 헤더정보를 전달하는 방식은 HTTP에서 인증을 위한 수단으로 널리 사용되고 있습니다.  [Basic access authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) 을 참고하세요.
 
-쿨에스엠에스 `API Key 관리 <https://www.coolsms.co.kr/index.php?mid=service_setup&act=dispSmsconfigCredentials>`_ 페이지에서 API Key와 API Secret을 생성하여 REST API 호출에 사용합니다.
+쿨에스엠에스 [API Key 관리](https://www.coolsms.co.kr/index.php?mid=service_setup&act=dispSmsconfigCredentials) 페이지에서 API Key와 API Secret을 생성하여 REST API 호출에 사용합니다.
 
-![Credential Information](/images/credential_info.png)
+![Credential Information](images/credential_info.png)
 
 ## Request Syntax
 
@@ -28,20 +28,20 @@ REST API를 요청(Request)할 때 HTTP 헤더에 Authorization 정보를 추가
 
 ```
 
-  : AuthenticationMethod
-    : Signature 생성 알고리즘으로 HMAC-SHA256, HMAC-MD5 중에 하나를 선택할 수 있습니다.
+AuthenticationMethod
+  : Signature 생성 알고리즘으로 HMAC-SHA256, HMAC-MD5 중에 하나를 선택할 수 있습니다.
 
-  : ApiKey
-    : 발급받은 API Key를 입력합니다.
+ApiKey
+  : 발급받은 API Key를 입력합니다.
 
-  : DateTime
-    : ISO 8601 규격의 날짜와 시간을 입력합니다.
+DateTime
+  : ISO 8601 규격의 날짜와 시간을 입력합니다.
 
-  : Salt
-    : 10 ~ 64바이트의 불규칙적이고 랜덤한 문자열을 생성하여 사용합니다.
+Salt
+  : 10 ~ 64바이트의 불규칙적이고 랜덤한 문자열을 생성하여 사용합니다.
 
-  : Signature
-    : DateTime와 Salt을 하나로 연결한 문자열을 데이터로 하고 API Secret을 Key로 만들어진 HMAC 해시코드
+Signature
+  : DateTime와 Salt을 하나로 연결한 문자열을 데이터로 하고 API Secret을 Key로 만들어진 HMAC 해시코드
 
 Signature의 재사용을 막기위해서 입력된 DateTime이 표준시간을 기준으로 ±15분 차이가 날 경우 RequestTimeTooSkewed 오류를 리턴합니다. 또한 15분 내에 한번 사용된 Signature는 중복사용이 불가능하므로 원천적으로 재사용을 차단하고 있습니다.
 
