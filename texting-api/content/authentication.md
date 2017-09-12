@@ -16,11 +16,11 @@ REST API를 요청(Request)할 때 HTTP 헤더에 Authorization 정보를 추가
 ![Credential Information](/images/credential_info.png)
 
 
-## Request Syntax
+> Request Syntax
 
-.. code-block:: http
-
-  Authorization: <AuthenticationMethod> apiKey=<ApiKey>, date=<DateTime>, salt=<Salt>, signature=<Signature>
+```
+Authorization: <AuthenticationMethod> apiKey=<ApiKey>, date=<DateTime>, salt=<Salt>, signature=<Signature>
+```
 
 <AuthenticationMethod>
   Signature 생성 알고리즘으로 HMAC-SHA256, HMAC-MD5 중에 하나를 선택할 수 있습니다.
@@ -35,30 +35,124 @@ REST API를 요청(Request)할 때 HTTP 헤더에 Authorization 정보를 추가
 
 Signature의 재사용을 막기위해서 입력된 <DateTime>이 표준시간을 기준으로 ±15분 차이가 날 경우 RequestTimeTooSkewed 오류를 리턴합니다. 또한 15분 내에 한번 사용된 Signature는 중복사용이 불가능하므로 원천적으로 재사용을 차단하고 있습니다.
 
-  *참고*
-    날짜와 시간을 표현하는데 있어서 시차와 표기법이 틀릴 수 있으므로 혼돈이 없도록 국제규격 ISO 8601을 따릅니다. `ISO 8601 <https://ko.wikipedia.org/wiki/ISO_8601>`_ 을 참고하세요.
+*참고*
 
-Signature 생성
-~~~~~~~~~~~~~
+날짜와 시간을 표현하는데 있어서 시차와 표기법이 틀릴 수 있으므로 혼돈이 없도록 국제규격 ISO 8601을 따릅니다. `ISO 8601 <https://ko.wikipedia.org/wiki/ISO_8601>`_ 을 참고하세요.
+
+# Signature 생성
+
 클라이언트에서 <DateTime> + <Salt> 를 데이터로, API Secret을 Key로 사용하여 HMAC(Hash-based Message 
 Authentication Code)을 만들어진 Signature를 서버로 보내면, 서버 쪽에서도 동일한 방식으로 만들어 비교하게 됩니다. API Secret은 Signature를 생성할 때만 사용하고 외부에 노출되지 않도록 주의해야 합니다.
 
-  *참고*
-    메시지의 무결성 검증(인증)을 위한 용도로 Signature 생성 및 검증에 Hash기반의 MAC 알고리즘을 사용하고 있습니다. `Hash-based message authentication code <https://en.wikipedia.org/wiki/Hash-based_message_authentication_code>`_ 을 참고하세요.
+*참고*
+
+메시지의 무결성 검증(인증)을 위한 용도로 Signature 생성 및 검증에 Hash기반의 MAC 알고리즘을 사용하고 있습니다. `Hash-based message authentication code <https://en.wikipedia.org/wiki/Hash-based_message_authentication_code>`_ 을 참고하세요.
     
 Signature는 중복사용이 불가하며 15분 안에 전송되는 요청(Request)의 Signature 값은 항상 달라야 합니다. 그래서 Salt는 매번 요청때마다 다른 문자열로 변경하여 요청 시간대가 같아도 항상 Signature가 다른 값으로 생성되도록 합니다.
 
-아래는 PHP에서 Signature를 HMAC-SHA256으로 생성하는 코드입니다.
+> Request Sample
 
-.. code-block:: php
+```bash
+curl -X POST 
+https://solapi.com/MessageLog/3/getSentMessages 
+--header "Authorization : [HMAC-SHA256 or HMAC-MD5] ApiKey=[API_KEY], Date=[ISO 8601 DATE], Salt=[UNIQID], Signature=[SIGNATURE]"
 
-  $api_key = 'NCSJHQYTPNB4DHEB';
-  $api_secret  = '62YSRABVESTZIPD6OHRCCPIOYV69UETF';
-  $date = date('c');
-  $salt = uniqid();
-  $hmac_data = $date.$salt;
-  $signature = hash_hmac('sha256', $hmac_data, $api_secret);
+```
+```javascript
+const publicKey = "[API_KEY]"; //user API Key
+const secretKey = "[API_SECRET_KEY]"; //user API Secret
+const moment = require('moment');
+const uniqid = require('uniqid');
+const request = require('request');
+const Hmac = require('crypto-js/hmac-sha256'); //hmac-sha256 or hmac-md5
+const algorithm = 'HMAC-SHA256'; //HMAC-SHA256 or HMAC-MD5
+const date = moment.utc().format();
+const salt = uniqid();
+const hmacData = date + salt;
+const signature = Hmac(hmacData, secretKey).toString();
+request(
+  {
+    url: "https://solapi.com/MessageLog/3/getSentMessages", //requset url
+    method: 'post',
+    headers: {
+      'Authorization': `${algorithm} ApiKey=${publicKey}, Date=${date}, Salt=${salt}, Signature=${signature}`
+    },
+    json: {}
+  },
+  function (error, response, body) {
+    if (error) {
+      console.log(error)
+    }
+    if (response.statusCode != 200) {
+      console.log(body)
+    }
+    if (!error && response.statusCode == 200) {
+      console.log(error, body)
+    }
+  }
+)
+```
+```python
+import hmac
+import uuid
+import time
+import datetime
+[from hashlib import md5 or from hashlib import sha256]
+from urllib import urlencode
+from httplib import HTTPSConnection
 
+class Coolsms:
+    # SMS Gateway address
+    host = 'solapi.com'
+    # use secure channel as default
+    port = 443
+    # API Key
+    api_key ="[API_KEY]"
+    # API Secret
+    api_secret = "[API_SECRET]"
+
+    def __get_signature__(self):
+        salt = str(uuid.uuid1())
+        timestamp = datetime.datetime.now().isoformat()
+        data = timestamp + salt
+        return timestamp, salt, hmac.new(self.api_secret.encode(), data.encode(), sha256 or md5)
+
+    def request(self):
+        timestamp, salt, signature = self.__get_signature__()
+        params = {'apiKey': self.api_key, 'date': timestamp, 'salt': salt,
+                       'signature': signature.hexdigest()}
+        params_str = urlencode(params)
+        auth = "[HMAC-SHA256 or HMAC-MD5] ApiKey=%s, Date=%s, Salt=%s, Signature=%s" % (self.api_key,params['date'],params['salt'],params['signature'])
+        headers = {"Authorization":auth}
+        conn = HTTPSConnection(self.host, self.port)
+        conn.request("POST","/MessageLog/3/getSentMessages", "", headers)
+	# Method, URL, params, header
+        response = conn.getresponse()
+        data = response.read().decode()
+        conn.close()
+cool = Coolsms()
+cool.request()
+```
+
+```php
+$api_key = "[API_KEY]"; //user API Key
+$api_secret  = "[API_SECRET]"; //user API Secret
+$date = date('c');
+$salt = uniqid();
+$hmac_data = $date.$salt;
+$signature = hash_hmac('[sha256 or md5]', $hmac_data, $api_secret);
+
+curl_setopt($ch, CURLOPT_URL,"https://solapi.com/MessageLog/3/getSentMessages"); //requset URL
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_TIMEOUT, 30); //timeout after 30 seconds
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+ 'Authorization: HMAC-[SHA256 or MD5] ApiKey='.$api_key.', Date='.$date.', Salt='.$salt.', Signature='.$signature.''
+));
+$result=curl_exec ($ch);
+$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);   //get status code
+curl_close ($ch);
+```
 Errors
 ---------------
 
@@ -89,13 +183,3 @@ Errors
   HTTP Status Code: 403
 
 공통적으로 일어날 수 있는 오류 코드를 확인하시려면 :doc:`errors` 를 참고하세요.
-
-Sample Request
---------------
-
-.. code-block:: http
-
-  POST /GroupMessage/createGroup HTTP/1.1
-  Content-Length: 0
-  Content-Type: application/json
-  Authorization: HMAC-SHA256 apiKey=NCSJHQYTPNB4DHEB, date=2017-06-05T11:51:10+09:00, salt=5934c71e3b980, signature=6db985f72ebfbe3c1c3a88c1fd8b9af7dec0d24caafec9c98213104591c2ea52
