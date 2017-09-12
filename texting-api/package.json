@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "./hugo --theme docuapi",
-    "watch": "cd content; markdown-pp -w . &",
+    "watch": "gulp watch",
     "touch": "cd content; touch *.mdpp",
     "serve": "npm watch; sh server.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/wileyday/coolsms-api-docs/issues"
   },
-  "homepage": "https://github.com/wileyday/coolsms-api-docs#readme"
+  "homepage": "https://github.com/wileyday/coolsms-api-docs#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "gitdown": "^2.5.0",
+    "gulp": "^3.9.1",
+    "markdown-it": "^8.4.0",
+    "markdown-it-deflist": "^2.0.3"
+  }
 }

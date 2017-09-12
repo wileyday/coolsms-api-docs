@@ -6,7 +6,7 @@ gulp.task('docbuild', () => {
   docbuild(
     path.resolve(__dirname, 'src'),
     path.resolve(__dirname, 'content')
-  )
+  );
 });
 
 gulp.task('watch', () => {
