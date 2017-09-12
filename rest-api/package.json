@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/wileyday/coolsms-api-docs#readme",
   "dependencies": {
-    "docbuild": "^1.0.13"
+    "docbuild": "^1.0.14"
   },
   "devDependencies": {
     "gitdown": "^2.5.0",
