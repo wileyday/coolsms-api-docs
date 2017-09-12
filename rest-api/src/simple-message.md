@@ -76,7 +76,7 @@ messages
 
 > Request Sample
 
-```shell
+```bash
   {
     "messages": [
       {
