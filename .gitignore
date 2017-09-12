@@ -1,1 +1,5 @@
-public
+**/public
+**/content
+**/node_modules
+**/*.swp
+**/*.log
