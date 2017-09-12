@@ -1,5 +1,5 @@
 **/public
-**/content
+rest-api/content
 **/node_modules
 **/*.swp
 **/*.log

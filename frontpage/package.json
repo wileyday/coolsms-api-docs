@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "./hugo --theme dimension",
+    "build": "./hugo --theme docdock",
     "watch": "cd content; markdown-pp -w . &",
     "touch": "cd content; touch *.mdpp",
     "serve": "npm watch; sh server.sh",
