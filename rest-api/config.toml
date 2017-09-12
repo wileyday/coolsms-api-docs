@@ -1,5 +1,5 @@
-baseURL = "/texting-api/"
-publishDir = "../public/texting-api"
+baseURL = "/rest-api/"
+publishDir = "../public/rest-api"
 languageCode = "ko"
 title = "문자전송 API Reference"
 theme = "docuapi"
