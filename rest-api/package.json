@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "./hugo --theme docuapi",
+    "doc-build": "mkdir content; ./node_modules/docbuild/bin/docbuild -s ./src -d ./content",
+    "build": "npm run doc-build; ./hugo --theme docuapi",
     "watch": "gulp watch",
     "touch": "cd content; touch *.mdpp",
     "serve": "npm watch; sh server.sh",
@@ -22,6 +23,7 @@
   },
   "homepage": "https://github.com/wileyday/coolsms-api-docs#readme",
   "dependencies": {
+    "docbuild": "^1.0.10"
   },
   "devDependencies": {
     "gitdown": "^2.5.0",

@@ -36,10 +36,9 @@ title: 그룹 메시지
 ### Resource URL
 `https://solapi.com/GroupMessage/3/createGroup`
 
-{{% syntaxParser %}}
-> Request Syntax
+### Request Syntax
 
-```json
+```syntax
 {
   "groupOptions": {
     "appId": "String",
@@ -53,7 +52,6 @@ title: 그룹 메시지
   }
 }
 ```
-{{% /syntaxParser %}}
 
 ### Required Parameters
 필수 입력 사항이 없습니다.
@@ -109,8 +107,8 @@ groupOptions
 
 예) 2017-06-16 09:05:10 (2017년 06월 16일 9시 5분 10초에 발송되도록 예약)
 
-{{< syntaxParser >}}
-> Response Syntax
+### Response Syntax
+
 ```json
 {
   "groupId": "String",
@@ -155,7 +153,7 @@ groupOptions
   "ttl": Number
 }
 ``` 
-{{< /syntaxParser >}}
+
 ### Optional Parameters
 **groupOptions**
   : 그룹 옵션
@@ -307,14 +305,10 @@ curl_close($ch);
 ### Resource URL
 `https://solapi.com/GroupMessage/3/group/{groupId}/getGroupInfo`
 
-{{% syntaxParser %}}
-
-> Request Syntax
+### Request Syntax
 ```json
 
 ```
-
-{{% /syntaxParser %}}
 
 ### Required Parameters
 필수 입력 사항이 없습니다.
@@ -322,9 +316,7 @@ curl_close($ch);
 ### Optional Parameters
 선택 입력 사항이 없습니다.
 
-{{% syntaxParser %}}
-
-> Response Syntax
+### Response Syntax
 
 ```json
 {
@@ -372,8 +364,6 @@ curl_close($ch);
 }
 
 ```
-
-{{% /syntaxParser %}}
 
 groupId
   : 메시지가 속한 [그룹의 고유 ID](#)
@@ -519,9 +509,7 @@ curl_close($ch);
 ### Resource URL
 `https://solapi.com/GroupMessage/3/deleteGroups`
 
-{{% syntaxParser %}}
-
-> Request Syntax
+### Request Syntax
 
 ```json
 {
@@ -533,8 +521,6 @@ curl_close($ch);
   ],
 }
 ```
-
-{{% /syntaxParser %}}
 
 ### Required Parameters
 
@@ -548,9 +534,7 @@ groups
 ### Limits
 하나의 요청에 삭제할 수 있는 그룹 수는 최대 10개 입니다.
 
-{{% syntaxParser %}}
-
-> Response Syntax
+### Response Syntax
 
 ```json
 {
@@ -563,8 +547,6 @@ groups
   ]
 }
 ```
-
-{{% /syntaxParser %}}
 
 errorCount
   : 오류 발생 건수
@@ -651,17 +633,14 @@ curl_close($ch);
 ### Resource URL
 `https://solapi.com/GroupMessage/3/getGroupList`
 
-{{< syntaxParser >}}
+### Request Syntax
 
-> Request Syntax
-```json
+```syntax
 {
   "offset": Number,
   "limit": Number
 }
 ```
-
-{{< /syntaxParser >}}
 
 ### Required Parameters
 필수 입력 사항이 없습니다.
@@ -676,10 +655,9 @@ limit
     : `1 ~ 1000`
       : 기본값은 20 입니다
 
-{{< syntaxParser >}}
+### Response Syntax
 
-> Response Syntax
-```json
+```syntax
 {
   "totalCount": Number,
   "offset": Number,
@@ -729,8 +707,6 @@ limit
   }
 }
 ```
-
-{{< /syntaxParser >}}
 
 totalCount
   : 생성된 그룹 갯수
@@ -834,11 +810,9 @@ curl_close($ch);
 ### Resource URL
 `https://solapi.com/GroupMessage/3/group/{groupId}/addMessages`
 
-{{< syntaxParser >}}
+### Request Syntax
 
-> Request Syntax
-
-```json
+```syntax
 {
   "messages": [
     {
@@ -877,8 +851,6 @@ curl_close($ch);
   ],
 }
 ```
-
-{{< /syntaxParser >}}
 
 ### Required Parameters
 messages
@@ -964,10 +936,9 @@ messages
   : - 한번의 요청(Request)에 대해 수신번호는 1,000 개를 넘을 수 없습니다.
   : - 하나의 그룹에 담을 수 있는 메시지는 1,000,000 개 입니다.
 
-{{< syntaxParser >}}
+### Response Syntax
 
-> Response Syntax
-```json
+```syntax
 {
   "errorCount": Number,
   "resultList": [
@@ -983,7 +954,6 @@ messages
   ]
 }
 ```
-{{< /syntaxParser >}}
 
 errorCount
   : 오류 카운트
@@ -1088,9 +1058,8 @@ curl_close($ch);
 ### Resource URL
 `https://solapi.com/GroupMessage/3/group/{groupId}/deleteMessages`
 
-{{< syntaxParser >}}
+### Request Syntax
 
-> Request Syntax
 ```json
 {
   "messages": [
@@ -1101,8 +1070,6 @@ curl_close($ch);
   ]
 }
 ```
-
-{{< /syntaxParser >}}
 
 ### Required Parameters
 
@@ -1117,11 +1084,9 @@ messages
 ### Limits
 하나의 요청에 삭제 할 수 있는 메시지의 최대 갯수는 1,000 개를 넘을 수 없습니다.
 
-{{< syntaxParser >}}
+### Response Syntax
 
-> Response Syntax
-
-```json
+```syntax
 {
   "errorCount": Number,
   "resultList": [
@@ -1132,8 +1097,6 @@ messages
   ]
 }
 ```
-
-{{< /syntaxParser >}}
 
 errorCount
   : 오류 카운트
@@ -1214,17 +1177,14 @@ curl_close($ch);
 ### Resource URL
 `https://solapi.com/GroupMessage/3/group/{groupId}/getMessageList`
 
-{{< syntaxParser >}}
+### Request Syntax
 
-> Request Syntax
-```json
+```syntax
 {
   "offset": Number,
   "limit": Number
 }
 ```
-
-{{< /syntaxParser >}}
 
 ### Required Parameters
 필수 입력 사항이 없습니다.
@@ -1241,10 +1201,9 @@ limit
     : `1 ~ 1000`
       : 기본값은 20 입니다
 
-{{< syntaxParser >}}
+### Response Syntax
 
-> Response Syntax
-```json
+```syntax
 {
   "totalCount": Number,
   "offset": Number,
@@ -1263,7 +1222,6 @@ limit
   }
 }
 ```
-{{< /syntaxParser >}}
 
 totalCount
   : 레코드 전체 갯수
@@ -1361,14 +1319,11 @@ curl_close($ch);
 ### Resource URL
 `https://solapi.com/GroupMessage/3/group/{groupId}/sendMessages`
 
-{{< syntaxParser >}}
+### Request Syntax
 
-> Request Syntax
-```json
+```syntax
 
 ```
-
-{{< /syntaxParser >}}
 
 ### Requird Parameters
 필수 입력 사항이 없습니다.
@@ -1376,16 +1331,13 @@ curl_close($ch);
 ### Optional Parameters
 선택 입력 사항이 없습니다.
 
-{{< syntaxParser >}}
+### Response Syntax
 
-> Response Syntax
-```json
+```syntax
 {
   "resultCode": "String"
 }
 ```
-
-{{< /syntaxParser >}}
 
 resultCode
   : 아래 코드 중 하나가 리턴됩니다.
