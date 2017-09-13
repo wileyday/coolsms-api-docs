@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 20
 title: 메시지발송
 ---
 
@@ -12,17 +12,7 @@ title: 메시지발송
 
 `https://solapi.com/SimpleMessage/3/sendMessages`
 
-## Request Parameters
-### Required Parameters
-
-### Optional Parameters
-
-messages
-: [Array] 형식의 메시지 발송 정보
-
-{"gitdown": "include", "file": "./fragments/to.md"}
-
-### Request Syntax
+## Request Syntax
 
 ```syntax
   {
@@ -74,9 +64,112 @@ messages
   }
 ```
 
-> Request Sample
+### Required Parameters
+
+messages
+: [Array] 형식의 메시지 발송 정보
+
+%include 2 ./fragments/to.md
+%include 2 ./fragments/from.md
+%include 2 ./fragments/text.md
+
+### Optional Parameters
+
+messages
+: [Array] 형식의 메시지 발송 정보
+
+%include 2 ./fragments/type.md
+%include 2 ./fragments/country.md
+%include 2 ./fragments/subject.md
+%include 2 ./fragments/imageId.md
+%include 2 ./fragments/scheduledDate.md
+%include 2 ./fragments/kakaoOptions.md
+
+%include 0 ./fragments/groupOptions.md
+
+> Sample Request
 
 ```bash
+$ curl -X POST https://solapi.com/SimpleMessage/3/sendMessages \
+    --header "Authorization":"HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[SALT], Signature=[SIGNATURE]" \
+    -d '{
+          "messages": [
+            {
+              "to": {"recipient": "01000000001"},
+              "from": "0212345678",
+              "text": "테스트 문자",
+              "type": "SMS"
+            }
+          ], "options": { }
+        }'
+```
+```javascript
+request(
+  {
+    url: "https://solapi.com/SimpleMessage/3/sendMessages",
+    method: 'post',
+    headers: {
+      'Authorization': `HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[SALT], Signature=[SIGNATURE]`
+    },
+    json: {
+      "messages": [
+        {
+          "to": {"recipient": "01000000001"},
+          "from": "0212345678",
+          "text": "테스트 문자",
+          "type": "SMS"
+        }
+      ], "options": { }
+    }
+  }
+)
+```
+```python
+conn = HTTPSConnection('solapi.com', '443')
+conn.request(
+  "POST",
+  "/SimpleMessage/3/sendMessages",
+  json.dumps(
+    {
+      "messages": [
+        {
+          "to": {"recipient": "01000000001"},
+          "from": "0212345678",
+          "text": "테스트 문자",
+          "type": "SMS"
+        }
+      ], "options": { }
+    }
+  ),
+  {"Authorization":"HMAC-SHA256 ApiKey=[API_KEY], Date=[DATE], Salt=[SALT], Signature=[SIGNATURE]"})
+conn.close()
+```
+```php
+<?php
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,"https://solapi.com/SimpleMessage/3/sendMessages"); //requset URL
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: HMAC-SHA256 ApiKey=[API_KEY], Date=[DATA], Salt=[SALT], Signature=[SIGNATURE])');
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(
+    {
+      "messages": [
+        {
+          "to": {"recipient": "01000000001"},
+          "from": "0212345678",
+          "text": "테스트 문자",
+          "type": "SMS"
+        }
+      ], "options": { }
+    }
+));
+curl_exec($ch);
+curl_close($ch);
+?>
+```
+
+> Sample Parameters
+
+```json
   {
     "messages": [
       {
@@ -94,7 +187,7 @@ messages
               }
             },
             {
-              "recipient": "01000000004",
+              "recipient": "01000000004", // 수신번호 중복
               "customFields": {
                 "mySequence": 2
               }
@@ -122,8 +215,6 @@ messages
     }
   }
 ```
-
-
 ## Limits
 
 메시지발송 API에서 하나의 요청에 대해 아래와 같은 두가지 제한사항이 있습니다.
@@ -131,19 +222,9 @@ messages
   - 하나의 요청의 총 데이터 크기는 10MB를 넘을 수 없습니다.
   - 하나의 요청에 대해 수신번호는 1,000개를 넘을 수 없습니다. 
 
-## Response Parameters
+## Response Syntax
 
-
-errorCount
-  오류 카운트
- 
-resultList
-  Array 형식의 결과 목록
-
-
-> Response Syntax
-
-```json
+```syntax
   {
     "errorCount": Number,
     "resultList": [
@@ -160,8 +241,45 @@ resultList
   }
 ```
 
-> Response Sample
+errorCount
+: 오류 카운트
 
+resultList
+: Array 형식의 결과 목록
+
+recipient
+: 수신번호
+
+messageId
+: 메시지의 고유 ID
+
+type
+: 리턴 가능한 값
+
+  `SMS`
+  : 영자 90 자(한글 45 자) 이하의 단문메시지
+
+  `LMS`
+  : 영자 2,000 자(한글 1,000 자) 이하의 장문메시지
+
+  `MMS`
+  : 영자 2,000 자(한글 1,000 자) 이하의 텍스트와 1개의 이미지 를 포함하는 메시지
+
+  `ATA`
+  : 한/영 포함 1,000 자의 텍스트를 발송할 수 있는 카카오톡의 알림톡
+
+  `CTA`
+  : 한/영 포함 1,000 자의 텍스트를 보낼 수 있는 카카오톡의 친구톡
+  국가번호 82(한국)외 해외문자인 경우 SMS 만 발송가능하고 LMS, MMS 는 발송불가.
+
+statusCode
+: 메시지의 상태를 나타내는 4자리의 숫자로 구성된 코드입니다. 메시지상태코드 에서 코드 목록을 확인하실 수 있습니다.
+
+customFields
+: 요청 때 입력한 값이 그대로 리턴되며 메시지로그에서도 확인할 수 있습니다.
+
+
+> Sample Response
 ```json
   {
     "errorCount": 1,
@@ -197,7 +315,7 @@ resultList
         "recipient": "01000000004",
         "messageId": "MID58BCB129CD38B",
         "type": "SMS",
-        "resultCode": "1026",
+        "resultCode": "1026", // 수신번호 중복
         "customFields": {
           "mySequence": 2
         }
