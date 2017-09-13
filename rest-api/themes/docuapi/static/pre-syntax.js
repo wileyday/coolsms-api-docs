@@ -1,10 +1,7 @@
 jQuery(document).ready(function() {
   jQuery('pre-syntax')
     .find('.s2')
-    .css('color','#df8af0');
-  jQuery('pre-syntax')
-    .find('.err')
-    .css('color','#87B4FA');
+    .css('color','rgb(223, 50, 240)');
   jQuery('pre-syntax')
     .children('.highlight')
     .css('background', 'none');

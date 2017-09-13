@@ -19,15 +19,14 @@ title: 그룹 메시지
 그 바구니(그룹)에 메시지를 추가하고 제대로 담겼는지 확인(리뷰) 후 발송하는 순서입니다.
 발송 단계에서는 발송 스위치만 켜는 역할로 이미 발송하려는 메시지 내용이 모두 서버에 전송되고 리뷰가 완료된 상태입니다.
 
-* [그룹 생성](http://wiley.dev.nurigo.net:46205/?php#그룹-생성)
-
-* [그룹 정보](http://wiley.dev.nurigo.net:46205/?php#그룹-생성)
-* [그룹 삭제](http://wiley.dev.nurigo.net:46205/?php#그룹-생성)
-* [그룹 목록](http://wiley.dev.nurigo.net:46205/?php#그룹-생성)
-* [그룹메시지 추가](http://wiley.dev.nurigo.net:46205/?php#그룹-생성)
-* [그룹메시지 삭제](http://wiley.dev.nurigo.net:46205/?php#그룹-생성)
-* [그룹메시지 목록](http://wiley.dev.nurigo.net:46205/?php#그룹-생성)
-* [그룹메시지 발송](http://wiley.dev.nurigo.net:46205/?php#그룹-생성)
+* [그룹 생성](/#그룹-생성)
+* [그룹 정보](/#그룹-정보)
+* [그룹 삭제](/#그룹-삭제)
+* [그룹 목록](/#그룹-목록)
+* [그룹메시지 추가](/#그룹메시지-추가)
+* [그룹메시지 삭제](/#그룹메시지-삭제)
+* [그룹메시지 목록](/#그룹메시지-목록)
+* [그룹메시지 발송](/#그룹메시지-발송)
 
 ## 그룹 생성
 메세지를 담을 그룹을 생성하여 그룹아이디를 리턴합니다. 
@@ -57,46 +56,8 @@ title: 그룹 메시지
 필수 입력 사항이 없습니다.
 
 ### Optional Parameters
-groupOptions
-  : 그룹 옵션
 
-  : appId
-    : 어플리케이션을 구분하는 ID 로 사용되며 솔루션 제공에 대한 수수료 정산의 기준이 되는 ID 이기도 합니다.
-    : 자세한 안내는 [http://www.coolsms.co.kr/sp](http://www.coolsms.co.kr/sp) 을 참고하세요.
-
-  : appVersion
-    : 어플리케이션 버전, 예) Purplebook 4.1
-
-  : testMode
-    : 값이 true 이면 CARRIER 시뮬레이터로 시뮬레이션됩니다. 
-    : 수신번호를 반드시 01000000000 ~ 01000009999 범위 내에서 테스트합니다. 결과값은 60으로 고정됩니다.
-    : 입력 가능한 값
-      : `false` *default* 
-        : 메시지를 실제 발송합니다. 
-      : `true`
-        : 테스트 모드로 실제 발송하지 않고 내부 시뮬레이션을 타게 합니다.
-
-  : forceSms
-    : 누리고푸시를 사용하더라도 푸시로 발송하지 않고 문자메시지로 발송합니다.
-    : 입력 가능한 값
-      : `true`
-        : 강제 문자 발송 
-      : `false` *default*
-        : 푸시 발송 실패시 문자 발송 
-   
-  : onlyAta
-    
-  : osPlatform
-    : 클라이언트의 OS 및 플랫폼 버전, 예) CentOS 6.6
-
-  : devLanguage
-    : 개발 프로그래밍 언어, 예) PHP 5.3.3
-
-  : sdkVersion
-    : SDK 버전, 예) PHP SDK 1.5
-
-  : scheduledDate
-    : YYYY-MM-DD HH:MI:SS 포맷의 예약시간.
+%include 0 ./fragments/groupOptions.md
 
 ### 예약시간
 예약시간을 입력하면 해당 시간에 메시지를 발송합니다.
@@ -1369,22 +1330,278 @@ NothingToSend
 > Request Sample
 
 ```bash
-
+test
 ```
 
 > Response Sample
+
 ```json
 { 
   resultCode: "Success" 
 }
 ```
 
+# 메시지로그 조회
 
+## Resource URL
+`https://solapi.com/MessageLog/3/getSentMessages`
 
+## Request Syntax
 
+```syntax
+{
+  "begin": "Date",
+  "end": "Date",
+  "offset": Number,
+  "limit": Number,
+  "condition": {
+    "include": {
+      "groupId": "String",
+      "messageId": "String",
+      "to": "String",
+      "from": "String",
+      "type": "String",
+      "networkCode": "String",
+      "statusCode": "String",
+      "appId": "String"
+    },
+    "exclude": {
+      "groupId": "String",
+      "messageId": "String",
+      "to": "String",
+      "from": "String",
+      "type": "String",
+      "networkCode": "String",
+      "statusCode": "String",
+      "appId": "String"
+    }
+  }
+}
+```
+### Required Parameters
+필수 입력 사항이 없습니다.
 
+### Optional Parameters
+begin
+  : 조회 시작 일시를 입력합니다. 기본값은 오늘날짜의 0시 0분 0초입니다.
 
+end
+  : 조회 끝 일시를 입력합니다. 기본값은 오늘날짜의 현재 시각입니다.
 
+offset
+  : 가져올 레코드 시작 위치
+  : 입력 가능한 값
+    : `0 ~ 999999`
+      : 기본값은 0 입니다
+
+limit
+  : 가져올 레코드의 수
+  : 입력 가능한 값
+    : `0 ~ 1000`
+      : 기본값은 20 입니다
+
+condition
+  : 조건을 주어 원하는 레코드들만 조회 할 수 있습니다.
+  : include
+    : 서브 파라메터의 입력값에 해당되는 레코드들만 리턴합니다. 두 개 이상 입력시 AND 연산으로 처리합니다.
+    : groupId
+      : 메시지가 속한 [그룹의 고유 ID](#)
+    : messageId
+      : [메시지의 고유 ID](#)
+    : to
+      : 메시지를 받는 사람의 전화번호인 [수신번호](#)
+    : from
+      : 보내는 사람의 전화번호인 [발신번호](#) 로 보통 고객센터의 전화번호를 사용하며 사전에 등록되어 있어야 합니다.
+    : type
+      : 메시지의 유형
+      : 입력 가능한 값
+        : `SMS`
+          : 영자 90 자(한글 45 자) 이하의 단문메시지
+        : `LMS`
+          : 영자 2,000 자(한글 1,000 자) 이하의 장문메시지
+        : `MMS`
+          : 영자 2,000 자(한글 1,000 자) 이하의 텍스트와 1개의 [이미지](#) 를 포함하는 메시지
+        : `ATA`
+          : 한/영 포함 1,000 자의 텍스트를 발송할 수 있는 카카오톡의 [알림톡](#)
+        : `CTA`
+          : 한/영 포함 1,000 자의 텍스트를 보낼 수 있는 카카오톡의 [친구톡](#)
+        : `PUSH`
+          : 푸시메시지
+    : networkCode
+      : 메시지가 발송된 최종 종착지의 네트워크 혹은 이동통신사의 코드
+      : ***참고***
+        : [이동통신사 코드](#)
+    : statusCode
+      : 메시지의 상태를 나타내는 4자리의 숫자로 구성된 코드입니다. [메시지상태코드](#) 에서 코드 목록을 확인하실 수 있습니다.
+    : appId
+      : 어플리케이션을 구분하는 ID 로 사용되며 솔루션 제공에 대한 수수료 정산의 기준이 되는 ID 이기도 합니다. 자세한 안내는 [http://www.coolsms.co.kr/sp](http://www.coolsms.co.kr/sp) 을 참고하세요.
+
+  : exclude
+    : 서브 파라메터의 입력값을 제외한 나머지 레코드들만 리턴합니다. 두 개 이상 입력시 AND 연산으로 처리합니다.
+    : groupId
+      : 메시지가 속한 [그룹의 고유 ID](#)
+    : messageId
+      : [메시지의 고유 ID](#)
+    : to
+      : 메시지를 받는 사람의 전화번호인 [수신번호](#)
+    : from
+      : 보내는 사람의 전화번호인 [발신번호](#) 로 보통 고객센터의 전화번호를 사용하며 사전에 등록되어 있어야 합니다.
+    : type
+      : 메시지의 유형
+      : 입력 가능한 값
+        : `SMS`
+          : 영자 90 자(한글 45 자) 이하의 단문메시지
+        : `LMS`
+          : 영자 2,000 자(한글 1,000 자) 이하의 장문메시지
+        : `MMS`
+          : 영자 2,000 자(한글 1,000 자) 이하의 텍스트와 1개의 [이미지](#) 를 포함하는 메시지
+        : `ATA`
+          : 한/영 포함 1,000 자의 텍스트를 발송할 수 있는 카카오톡의 [알림톡](#)
+        : `CTA`
+          : 한/영 포함 1,000 자의 텍스트를 보낼 수 있는 카카오톡의 [친구톡](#)
+        : `PUSH`
+          : 푸시메시지
+    : networkCode
+      : 메시지가 발송된 최종 종착지의 네트워크 혹은 이동통신사의 코드
+      : ***참고***
+        : [이동통신사 코드](#)
+    : statusCode
+      : 메시지의 상태를 나타내는 4자리의 숫자로 구성된 코드입니다. [메시지상태코드](#) 에서 코드 목록을 확인하실 수 있습니다.
+    : appId
+      : 어플리케이션을 구분하는 ID 로 사용되며 솔루션 제공에 대한 수수료 정산의 기준이 되는 ID 이기도 합니다. 자세한 안내는 [http://www.coolsms.co.kr/sp](http://www.coolsms.co.kr/sp) 을 참고하세요.
+
+## Response Syntax
+```syntax
+{
+  "totalCount": Number,
+  "offset": Number,
+  "limit": Number,
+  "messageList": {
+    "messageId": {
+      "groupId": "String",
+      "to": "String",
+      "from": "String",
+      "text": "String",
+      "type": "String",
+      "country": "String",
+      "subject": "String",
+      "imageId": "String",
+      "scheduledDate": "String",
+      "kakaoOptions": {
+        "senderKey": "String",
+        "templateCode": "String",
+        "buttonName": "String",
+        "buttonUrl": "String"
+      },
+      "customFields": {
+        "myCustomField": {Map} | [Array] | "String" | Number /* 사용자 정의 필드  */
+      },
+      "dateCreated": "Date",
+      "statusCode": "String",
+      "dateReceived": "Date",
+      "networkCode": "String",
+      "networkName": "String"
+    },
+    ...
+  }
+}
+```
+
+totalCount
+  : 레코드 전체 갯수
+
+offset
+  : 가져올 레코드 시작 위치
+  : 입력 가능한 값
+    : `0 ~ 999999`
+      : 기본값은 0 입니다
+
+limit
+  : 가져올 레코드의 수
+  : 입력 가능한 값
+    : `1 ~ 1000`
+      : 기본값은 20 입니다
+
+messageList
+  : Map 형식의 조회된 메시지 목록
+  : messageId
+    : [메시지의 고유 ID](#)
+    : groupId
+      : 메시지가 속한 [그룹의 고유 ID](#)
+    : to
+      : 메시지를 받는 사람의 전화번호인 [수신번호](#)
+    : from
+      : 보내는 사람의 전화번호인 [발신번호](#) 로 보통 고객센터의 전화번호를 사용하며 사전에 등록되어 있어야 합니다.
+    : text
+      : 메시지 내용
+    : type
+      : 메시지 유형을 리턴합니다.
+      : 리턴 가능한 값
+        : `SMS`
+          : 영자 90 자(한글 45 자) 이하의 단문메시지
+        : `LMS`
+          : 영자 2,000 자(한글 1,000 자) 이하의 장문메시지
+        : `MMS`
+          : 영자 2,000 자(한글 1,000 자) 이하의 텍스트와 1개의 [이미지](#) 를 포함하는 메시지
+        : `ATA`
+          : 한/영 포함 1,000 자의 텍스트를 발송할 수 있는 카카오톡의 [알림톡](#)
+        : `CTA`
+          : 한/영 포함 1,000 자의 텍스트를 보낼 수 있는 카카오톡의 [친구톡](#)
+        : `PUSH`
+          : 푸시메시지
+    : country
+      : 국가번호
+    : subject
+      : type이 LMS, MMS 일 때 제목
+    : imageId
+      : [이미지](#) 으로 등록할 때 리턴되는 이미지 ID   
+    : scheduledDate
+      : YYYY-MM-DD HH:MI:SS 포맷의 [예약시간](#).
+    : kakaoOptions
+      : senderKey
+        : 알림톡 Sender Key
+      : templateCode
+        : 알림톡 Template Code
+      : buttonName
+        : 카카오톡 버튼 이름, 10 자 제한
+      : buttonUrl
+        : 카카오톡 버튼 URL, 100 자 제한
+      : disableSms
+        : 알림톡 및 친구톡 발송에 실패하여도 문자메시지로 대체하여 발송하지 않습니다.
+        : 입력 가능한 값
+          : `true`
+            : 알림톡 실패시 문자로 대체하지 않음
+          : `false` *default*
+            : 알림톡 실패시 문자로 대체 발송
+    : customFields
+      : 사용자정의 필드를 개수 제한없이 총 160 자까지 입력할 수 있습니다. 요청에 대한 응답에 그대로 리턴되며 발송 이후 메시지로그에서도 조회 가능합니다.
+    : dateCreated
+      : 생성된 시각
+    : statusCode
+      : 메시지의 상태를 나타내는 4자리의 숫자로 구성된 코드입니다. [메시지상태코드](#) 에서 코드 목록을 확인하실 수 있습니다.
+    : dateReceived
+      : 단말기로 수신된 날짜와 시각
+    : networkCode
+      : 메시지가 발송된 최종 종착지의 네트워크 혹은 이동통신사의 코드
+      : ***참고***
+        : [이동통신사 코드](#)
+    : networkName
+      : 이동통신사 이름
+
+## Errros
+공통적으로 일어날 수 있는 오류 코드를 확인하시려면 [오류코드](#) 를 참고하세요.
+
+> Request Sample
+
+```bash
+test
+```
+
+> Response Sample
+
+```json
+test
+```
 
 
 
