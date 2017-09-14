@@ -10,5 +10,5 @@ gulp.task('docbuild', () => {
 });
 
 gulp.task('watch', () => {
-    gulp.watch(['./src/*'], ['docbuild']);
+    gulp.watch(['./src/**'], ['docbuild']);
 });
