@@ -1,4 +1,5 @@
 baseURL = "/"
+publishDir = "../public"
 languageCode = "ko"
 DefaultContentLanguage = "ko"
 
