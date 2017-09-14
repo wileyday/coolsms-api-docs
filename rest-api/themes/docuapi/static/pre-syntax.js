@@ -17,4 +17,13 @@ jQuery(document).ready(function() {
     .find('.err')
     .css('background-color', '#f1f6f9')
     .css('color', '#828281'); 
+  jQuery('pre-syntax')
+    .css('float','left')
+    .css('width','50%');
+  jQuery('blockquote')
+    .css('margin-top','-3%');
+  jQuery('pre-syntax')  
+    .children('.highlight')
+    .children('pre')
+    .css('width','100%');
 });
