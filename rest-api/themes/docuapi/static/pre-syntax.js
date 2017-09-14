@@ -1,10 +1,7 @@
 jQuery(document).ready(function() {
   jQuery('pre-syntax')
     .find('.s2')
-    .css('color','#df8af0');
-  jQuery('pre-syntax')
-    .find('.err')
-    .css('color','#87B4FA');
+    .css('color','rgb(223, 50, 240)');
   jQuery('pre-syntax')
     .children('.highlight')
     .css('background', 'none');
@@ -20,4 +17,13 @@ jQuery(document).ready(function() {
     .find('.err')
     .css('background-color', '#f1f6f9')
     .css('color', '#828281'); 
+  jQuery('pre-syntax')
+    .css('float','left')
+    .css('width','50%');
+  jQuery('blockquote')
+    .css('margin-top','-3%');
+  jQuery('pre-syntax')  
+    .children('.highlight')
+    .children('pre')
+    .css('width','100%');
 });
