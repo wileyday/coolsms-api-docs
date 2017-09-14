@@ -12,7 +12,7 @@ groupOptions
 
     입력 가능한 값
 
-    `false` default
+    `false` *default*
     : 메시지를 실제 발송합니다.
 
     `true`
@@ -26,9 +26,10 @@ groupOptions
     `true`
     : 강제 문자 발송
 
-    `false` default
+    `false` *default*
     : 푸시 발송 실패시 문자 발송
 
+ 
   osPlatform
   : 클라이언트의 OS 및 플랫폼 버전, 예) CentOS 6.6
 
