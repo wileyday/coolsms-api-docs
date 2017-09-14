@@ -1,3 +1,7 @@
+---
+weight: 80
+---
+
 # 오류코드
 
 ## InternalError
